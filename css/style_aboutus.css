@@ -1,0 +1,255 @@
+/*****GENERAL****/
+h1, h3{
+  text-align: center;
+  color: white;
+}
+.wrapper{
+  margin: 0 auto;
+  padding: auto;
+}
+.banner{
+  margin:0;
+  height: 638px;
+}
+.sub-footer{
+  margin:0;
+  height: 300px;
+}
+img{
+  max-width:100%;
+}
+.content{
+  margin: auto;
+}
+span{
+  text-align: center;
+}
+
+/*BASE ELEMENT STYLES*/
+*{
+  box-sizing: border-box;
+}
+/****NAVIGATION***/
+nav ul{
+  position: relative;
+  background-color: #3366ff;
+  margin-bottom: 0;
+}
+nav ul li{
+  display: inline;
+  list-style: none;
+  margin: 0 1%;
+  padding: .5% 0;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 120%;
+  color: rgb(230,230,230);
+}
+/******WRAPPER*****/
+.wrapper{
+  background-size: cover;
+  background-color:  #3366ff;
+  background-image:   url('https://upload.wikimedia.org/wikipedia/commons/2/28/LAMK_Kampusalue.jpg');
+  background-repeat:no-repeat;
+  background-position:center;
+  position: relative;
+}
+/***BANNER****/
+.banner h1{
+  padding-top: 20%;
+}
+/*****CONTENT****/
+/****1st paragraph****/
+.first{
+  padding-top: 3%;
+  padding-bottom:3%;
+}
+.first .text{
+  float: left;
+  display: block;
+}
+.first span{
+  display: box;
+  position: absolute;
+  margin: 5px;
+  border: 1px rgb(0, 153, 255) solid ;
+  border-radius: 4.2px;
+  box-sizing: border-inherit;
+  padding: 2px 6px;
+}
+.first span a{
+  text-decoration: none;
+  color: rgb(0, 153, 255);
+}
+.first img{
+  display: relative;
+  margin: auto 5%;
+}
+/****2nd paragraph****/
+.second{
+  padding-top: 3%;
+  padding-bottom:3%;
+  background-color: rgba(194, 194, 163, 0.2);
+}
+.second .text {
+  float: right;
+  display: block;
+  margin: auto 30%;
+}
+
+.second span{
+  display: box;
+  position: absolute;
+  margin: 5px;
+  border: 1px rgb(0, 153, 255) solid ;
+  border-radius: 4.2px;
+  box-sizing: border-inherit;
+  padding: 2px 6px;
+}
+.second span a{
+  text-decoration: none;
+  color: rgb(0, 153, 255);
+}
+.second img{
+  float: left;
+  display: relative;
+  margin: auto 5%;
+}
+
+/****3rd paragraph****/
+.third{
+  padding-top: 3%;
+  padding-bottom:3%;
+}
+.third ul{
+  float: left;
+  display: block;
+}
+.third img{
+  display: relative;
+  margin: auto 25%;
+}
+.third span{
+  display: box;
+  position: absolute;
+  margin: 5px;
+  border: 1px rgb(0, 153, 255) solid ;
+  border-radius: 4.2px;
+  box-sizing: border-inherit;
+  padding: 2px 6px;
+}
+.third span a{
+  text-decoration: none;
+  color: rgb(0, 153, 255);
+}
+
+/******SUB-FOOTER***/
+.sub-footer{
+  background-image:
+          url(https://www.startus.cc/sites/default/files/styles/landing_page_banner/public/119.jpg?itok=xzu6yhQq);
+  background-size:cover;
+  display:block;
+  padding-bottom:70px;
+  padding-top:70px;
+  position:relative;
+}
+/****sub-text***/
+.sub-text{
+  text-align: center;
+  display:block;
+  margin: 0% 42%;
+  border: 1px green solid ;
+  border-radius: 4.2px;
+  box-sizing: border-inherit;
+  padding: 2px 2px;
+  width: 155px 155px;
+  box-width: 15px;
+  background-color: green;
+}
+.sub-text a{
+  color: white;
+  text-decoration: none;
+}
+/*****FLOAT CLEARFIX***/
+.clearfix:after{
+  content:"";
+  display: table;
+  clear: both;
+}
+/****LINKS****/
+/* visited link */
+
+/* mouse over link */
+span a:hover {
+  color:#00ffff;
+}
+
+#footer{
+  width: 100%;
+  clear:both;
+  background-color: rgb(0,155,217);
+}
+/*********
+ FOOTER
+*********/
+
+
+#footer div{
+
+
+}
+
+.wrap-footer div {
+  width: 80%;
+  margin: 0% 2%;
+}
+
+.wrap-footer div{
+  display: inline-block;
+  width: 20%;
+}
+
+#footer p, a {
+  color: white;
+}
+
+#footer a{
+  text-decoration: none;
+}
+
+#footer img {
+  max-height: 30px;
+  min-height: 50px;
+}
+
+#footer img:hover{
+
+}
+
+#footer li {
+  list-style: none;
+}
+
+.icon-footer img{
+  margin: 5%;
+  background-color: rgb(0,155,217);
+
+}
+
+
+
+.icon-footer img:hover{
+  background-color: rgba(204, 230, 255, 0.3);
+  border-radius: 100%;
+  border: 2px solid;
+}
+
+.wrap-footer a:hover{
+  color: rgb(212,213,212);
+}
+/***STICKY FOOTER***/
+.footer,
+.push {
+  height: 50px;
+}

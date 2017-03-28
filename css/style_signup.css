@@ -1,0 +1,251 @@
+/********
+GENERAL
+********/
+body, html, .employer, .student, .option{
+    padding:0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, label{
+    font-family : 'Droid Sans', sans-serif;
+
+}
+
+body {
+    background : url('https://www.xmple.com/wallpaper/linear-blue-white-gradient-1920x1080-c2-6495ed-ffffff-a-60-f-14.svg');
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    margin: 5% 25% 0;
+}
+
+
+
+/******
+GENERAL
+.employer, student
+******/
+
+.employer, .student {
+    padding: 5%;
+    box-shadow : 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1%;
+}
+
+.employer {
+    background : rgba(0, 0, 102, 0.3);
+}
+
+.student {
+    background : rgba(20, 200, 204, 0.5);
+}
+
+
+
+/******
+version 16.03
+version 21.03
+INPUT
+*******/
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    margin: 0;
+    padding: 8px 0 8px 0;
+    width: 100%;
+    background-color: rgb(233,233,233);
+    color: rgb(2,2,2);
+    margin: 0 0 20px 0;
+    border-radius: 2.5%;
+    text-indent: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background: rgb(255,255,255);
+}
+
+/*****
+LABEL
+*****/
+.student label, .employer label {
+    font-weight : bold;
+
+    color: black;
+    opacity : 0.7;
+    font-size : 1em;
+}
+
+
+
+/****
+OPTION
+****/
+.option{
+    text-align: center;
+    margin: 4% 0 14% 0;
+}
+
+.option img{
+    margin: 0 5% 0 0;
+}
+
+
+/*********
+SWITCH BUTTON
+*********/
+
+.btn-employer, .btn-student{
+    max-height : 4.0em;
+    margin: 10px 10px 24% 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 1px rgb(244,244,244);
+
+}
+
+.btn-employer:hover, .btn-student:hover{
+    cursor: pointer;
+    box-shadow: 1px 0px 55px rgba(255,255,255,0.9);
+}
+
+.btn-employer:active, .btn-student:active{
+    box-shadow: 1px 1px 100px rgb(244,244,244);
+}
+
+.active{
+    box-shadow: 1px 0px 55px rgba(255,255,255,0.9);
+}
+
+/******
+SPAN
+*****/
+.password{
+    position: relative;
+}
+
+.confirm-password{
+    position: relative;
+}
+
+span{
+    margin: 0;
+    color: rgba(255,20,20,0.9);
+    font-size: 0.9em;
+    font-weight: bold;
+    position: absolute;
+    top: 52px;
+    display: block;
+
+}
+
+
+/*****
+signUp button
+****/
+
+.signUp-btn {
+    background : rgb(0, 102, 255);
+    border-radius : 5%;
+    border : rgb(0, 52, 200);
+    box-shadow : 0 7px 5px rgba(0, 52, 200, 0.8);
+    margin : 5% 0 0 0;
+    padding : 4% 0;
+    color : #ffffff;
+    font-size : 1.15em;
+    font-weight : bold;
+    width: 100%;
+    transition: all ease 0.3s;
+}
+
+.signUp-btn:active{
+    box-shadow : 0 2px 5px rgb(0, 52, 200);
+    position: relative;
+    top: 3px;
+    border: solid 3px rgb(255, 255, 255);
+
+
+}
+
+.signUp-btn:hover {
+    cursor : pointer;
+    background-color: rgb(0, 112, 255);
+    border: solid 0.5px rgb(50, 152, 255);
+
+}
+
+/********
+NOTE
+********/
+
+.note a {
+    color : rgb(255, 111, 222);
+}
+
+.note {
+    color : blue;
+    font-size : 22px;
+}
+
+.note a {
+    color : rgb(1, 1, 1);
+    font-size : 1.5em;
+}
+
+.note a:hover {
+    color : rgb(15, 115, 199);
+}
+
+
+/*********
+MEIDA QUERIES
+********/
+@media screen and (min-width: 900px){
+    .container{
+        margin: 2% 35%;
+
+    }
+
+    .employer, .student{
+
+
+    }
+
+
+}
+
+@media screen and (min-width: 180px) and (max-width: 900px){
+
+    body, html{
+        font-size: 0.9em;
+
+    }
+
+    input[type="text"],
+    input[type="password"]{
+        height: 15px;
+        margin: 0.5% 0 5% 0;
+
+    }
+
+    .employer, .student{
+
+    }
+}
