@@ -18,18 +18,17 @@ $result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_array($result))
 {
     $value = $row['TITLE'];
-
     echo '<div class=\"advertisement\">';
-
-    echo    '<a href="singleAd.php?expand='.$row['ID_ADV'].'">';
     echo    '<h1>'.$value.'</h1>';
+
+    echo '<p>Location: Across all offices </p>';
+    echo   "<p>Application deadline: ". finnish_dateformat($row['DEADLINE'])."</p>
+              <p>Requirement: ".substr($row['REQUIREMENT'],0,100)."</p>
+              <p>Futher Info : ".substr($row['FURTHER_INFO'], 0, 100)."</p>";
+    echo    '<a href="singleAd.php?expand='.$row['ID_ADV'].'">';
+    echo     '<button class="linkbutton"> See More</button>';
     echo    '</a>';
-        echo '<p>Location: Across all offices </p>';
-       echo   "<p>Application deadline: ". finnish_dateformat($row['DEADLINE'])."</p>
-          <p>Requirement: ".$row['REQUIREMENT']."</p>
-          <p>Futher Info : ".$row['FURTHER_INFO']."</p>
-
-
-        </div>
-      </div>";
+    echo   "</div>
+          </div>";
 }
+

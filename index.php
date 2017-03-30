@@ -54,9 +54,9 @@ error_reporting(E_ALL);
         <!--Login -->
         <div class="login">
             <ul>
+                <li><a class="linkbutton" href="postad.php">Post a Job</a></li>
                 <?php
                 if (isset($_SESSION['employer'])){ ?>
-                    <li><a class="linkbutton" href="postad.php">Post a Job</a></li>
                     <li><a class="linkbutton" href="students.php">Search Students</a></li>
                 <?php } ?>
 

@@ -9,13 +9,15 @@ include 'includes/config.php';
 session_start();
 if(isset($_GET['expand'])){
 
-    $query= "SELECT * FROM `ADVERTISEMENT` WHERE ID_ADV ='".$_GET['expand']."'";
+    $query= "SELECT * FROM `ADVERTISEMENT` WHERE DEADLINE > NOW() AND ID_ADV ='".$_GET['expand']."'";
 
     $result = mysqli_query($conn,$query);
 
+if ($row = mysqli_fetch_array($result)){
 
-    while($row = mysqli_fetch_array($result))
-    {
+//}
+//    while($row = mysqli_fetch_array($result))
+//    {
         $value = $row['TITLE'];
 
         echo '<div class=\"advertisement\">';
@@ -31,6 +33,9 @@ if(isset($_GET['expand'])){
 
         </div>
       </div>";
+    }
+    else{
+        echo 'No job available here';
     }
 
 }

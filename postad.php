@@ -66,10 +66,10 @@ wrap-nav
         <!--nav2 -->
         <div>
             <?php
-            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
-                echo "Sorry You cannot access to this section. This is for employer only";
-            }
-            else if(isset($_SESSION['employer'])) {
+//            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
+//                echo "Sorry You cannot access to this section. This is for employer only";
+//            }
+//            else if(isset($_SESSION['employer'])) {
 
 
                 ?>
@@ -113,7 +113,7 @@ wrap-nav
                 </form>
 
                 <?php
-            }
+//            }
             ?>
 
 
