@@ -14,26 +14,48 @@ if(isset($_SESSION["employer"])){
 if (isset($_POST["deadLine"])
     && isset($_POST["title"])
     && isset($_POST["contact"])
-//     && isset($_POST["jobDescription"])
-){
-    if(isset($_SESSION["employer"])){
-        $query ="INSERT INTO ADVERTISEMENT( DATE_OF_PUBLISH, TITLE, DEADLINE, CONTACT, REQUIREMENT, FURTHER_INFO, NUMBER_OF_VACCANCIES, REF_COMP) VALUES 
-(NOW(),'".$_POST["title"]."','".$_POST["deadLine"]."','".$_POST["contact"]."', '".$_POST["jobDescription"]."','".$_POST["furtherInformation"]."','".$_POST["numberOfVaccancies"]."','".$ref_com."');";
-        mysqli_query($conn, $query);
-    }else{
+    && isset($_POST["jobDescription"])
+    and strlen($_POST["deadLine"]) >=1 &&
+    strlen($_POST["title"]) >=1 &&
+    strlen($_POST["contact"]) >=1 &&
+    strlen($_POST["jobDescription"]) >=1)
 
-        $query ="INSERT INTO ADVERTISEMENT( DATE_OF_PUBLISH, TITLE, DEADLINE, CONTACT, REQUIREMENT, FURTHER_INFO, NUMBER_OF_VACCANCIES) VALUES 
-(NOW(),'".$_POST["title"]."','".$_POST["deadLine"]."','".$_POST["contact"]."', '".$_POST["jobDescription"]."','".$_POST["furtherInformation"]."','".$_POST["numberOfVaccancies"]."');";
-        mysqli_query($conn, $query);
+    {
+            echo $_POST["deadLine"].$_POST["title"].$_POST["jobDescription"];
+            if(isset($_SESSION["employer"]))
+            {
+                $query ="INSERT INTO ADVERTISEMENT( DATE_OF_PUBLISH, TITLE, DEADLINE, CONTACT, REQUIREMENT, FURTHER_INFO, NUMBER_OF_VACCANCIES, REF_COMP) VALUES 
+        (NOW(),'".$_POST["title"]."','".$_POST["deadLine"]."','".$_POST["contact"]."', '".$_POST["jobDescription"]."','".$_POST["furtherInformation"]."','".$_POST["numberOfVaccancies"]."','".$ref_com."');";
+               $inserted= mysqli_query($conn, $query);
+                   if($inserted)
+                   {
+                   echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Successful')
+                    window.location.href='index.php'
+                    </SCRIPT>");
+                   }
+            }
+            else
+                {
+                $query ="INSERT INTO ADVERTISEMENT( DATE_OF_PUBLISH, TITLE, DEADLINE, CONTACT, REQUIREMENT, FURTHER_INFO, NUMBER_OF_VACCANCIES) VALUES 
+        (NOW(),'".$_POST["title"]."','".$_POST["deadLine"]."','".$_POST["contact"]."', '".$_POST["jobDescription"]."','".$_POST["furtherInformation"]."','".$_POST["numberOfVaccancies"]."');";
+                 $inserted= mysqli_query($conn, $query);
+                    if($inserted)
+                    {
+                    echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Successful')
+                    window.location.href='index.php'
+                    </SCRIPT>");
+                    }
+                }
+
+
     }
-
-
-//       echo "<br>";
-//       echo "insert duoc roi";
-//   }
-
+else
+    {
     echo ("<SCRIPT LANGUAGE='JavaScript'>
-        window.location.href='index.php'
+        window.alert('please fill required fields')
+        window.location.href='postad.php'
         </SCRIPT>");
-}
+    }
 
