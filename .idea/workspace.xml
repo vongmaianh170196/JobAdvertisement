@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f2adff3-1e12-46d5-936d-f7e62b0b2d08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ad.php" afterPath="$PROJECT_DIR$/ad.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getAd.php" afterPath="$PROJECT_DIR$/getAd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postad.php" afterPath="$PROJECT_DIR$/postad.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singleAd.php" afterPath="$PROJECT_DIR$/singleAd.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getAd.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getAd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getAd.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -101,17 +96,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singleAd.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="singleAd.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/singleAd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="14" />
+            <state relative-caret-position="360">
+              <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
               <folding>
-                <marker date="1490812808000" expanded="true" signature="183:248" ph="SELECT * FRO... ADVERTISEMENT" />
-                <marker date="1490812808000" expanded="true" signature="183:249" ph="SELECT * FRO... ADVERTISEMENT" />
-                <marker date="1490812808000" expanded="true" signature="183:251" ph="SELECT * FRO... ADVERTISEMENT" />
-                <marker date="1490812808000" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
-                <marker date="1490812808000" expanded="true" signature="183:313" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490871430000" expanded="true" signature="183:248" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490871430000" expanded="true" signature="183:249" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490871430000" expanded="true" signature="183:251" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490871430000" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490871430000" expanded="true" signature="183:313" ph="SELECT * FRO... ADVERTISEMENT" />
               </folding>
             </state>
           </provider>
@@ -193,11 +188,11 @@
         <option value="$PROJECT_DIR$/css/style_login.css" />
         <option value="$PROJECT_DIR$/css/style_profile.css" />
         <option value="$PROJECT_DIR$/css/style_signup.css" />
-        <option value="$PROJECT_DIR$/singleAd.php" />
         <option value="$PROJECT_DIR$/postad.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ad.php" />
         <option value="$PROJECT_DIR$/getAd.php" />
+        <option value="$PROJECT_DIR$/singleAd.php" />
       </list>
     </option>
   </component>
@@ -398,12 +393,12 @@
       <workItem from="1489051395351" duration="11000" />
       <workItem from="1490730118517" duration="3305000" />
       <workItem from="1490812875789" duration="21000" />
-      <workItem from="1490866214409" duration="1743000" />
+      <workItem from="1490866214409" duration="2072000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36585000" />
+    <option name="totallyTimeSpent" value="36914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -906,20 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singleAd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="14" />
-          <folding>
-            <marker date="1490812808000" expanded="true" signature="183:248" ph="SELECT * FRO... ADVERTISEMENT" />
-            <marker date="1490812808000" expanded="true" signature="183:249" ph="SELECT * FRO... ADVERTISEMENT" />
-            <marker date="1490812808000" expanded="true" signature="183:251" ph="SELECT * FRO... ADVERTISEMENT" />
-            <marker date="1490812808000" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
-            <marker date="1490812808000" expanded="true" signature="183:313" ph="SELECT * FRO... ADVERTISEMENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-115">
@@ -942,6 +923,20 @@
           <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
           <folding>
             <marker date="1490870461000" expanded="true" signature="207:259" ph="SELECT * FRO... ADVERTISEMENT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singleAd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding>
+            <marker date="1490871430000" expanded="true" signature="183:248" ph="SELECT * FRO... ADVERTISEMENT" />
+            <marker date="1490871430000" expanded="true" signature="183:249" ph="SELECT * FRO... ADVERTISEMENT" />
+            <marker date="1490871430000" expanded="true" signature="183:251" ph="SELECT * FRO... ADVERTISEMENT" />
+            <marker date="1490871430000" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
+            <marker date="1490871430000" expanded="true" signature="183:313" ph="SELECT * FRO... ADVERTISEMENT" />
           </folding>
         </state>
       </provider>

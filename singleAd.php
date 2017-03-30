@@ -22,9 +22,7 @@ if ($row = mysqli_fetch_array($result)){
 
         echo '<div class=\"advertisement\">';
 
-        echo    '<a href="singleAd.php?expand='.$row['ID_ADV'].'">';
         echo    '<h1>'.$value.'</h1>';
-        echo    '</a>';
         echo '<p>Location: Across all offices </p>';
         echo   "<p>Application deadline: ". finnish_dateformat($row['DEADLINE'])."</p>
           <p>Requirement: ".$row['REQUIREMENT']."</p>
