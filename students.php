@@ -114,6 +114,38 @@ wrap-nav
   SIDE-NAV
 ---------->
     <div id="side-nav">
+        <h3>Search students</h3>
+        <div class="searchoption">
+            <p>Per faculty</p>
+            <form id="facultysearch">
+                <td><select name="faculty">
+                        <option value="Faculty of Business">Faculty of Business</option>
+                        <option value="Faculty of Technology">Faculty of Technology</option>
+                        <option value="Faculty of Healthcare">Faculty of Healthcare</option>
+                        <option value="Faculty of Arts">Faculty of Arts</option>
+                        <option value="Faculty of Humanities">Faculty of Humanities</option>
+                    </select>
+                </td>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="searchoption">
+            <p>Per degree</p>
+            <form id="degreesearch">
+                <td><select name="degree">
+                        <option value="Bachelor's Degree">Bachelor's degree</option>
+                        <option value="Master's Degree">Master's degree</option>
+                        <option value="Doctorate">Doctorate</option>
+                    </select>
+                </td>
+                <button type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="searchoption">
+
+        </div>
 
     </div>
     <!----------
@@ -127,11 +159,11 @@ wrap-nav
         <button onClick="allStudents()">All students</button>
 
         <div class="contentbox" id="allstudentsbox">
-            <h2>Students alphabetically</h2>
             <?php
 
             $query = "SELECT * FROM STUDENT_INFO ORDER BY LASTNAME, FIRSTNAME";
             $result = mysqli_query($conn,$query);
+            echo "<h2>Students alphabetically</h2>";
             include_once ('includes/studentloop.php'); // The while loop of echoing
 
             // better sorting methods really:
