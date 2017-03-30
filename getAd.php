@@ -19,7 +19,7 @@ while($row = mysqli_fetch_array($result))
 {
     $value = $row['TITLE'];
     echo '<div class=\"advertisement\">';
-    echo    '<h1>'.$value.'</h1>';
+    echo    '<a href="singleAd.php?expand='.$row['ID_ADV'].'">'.'<h2>'.$value.'</h2></a>';
 
     echo '<p>Location: Across all offices </p>';
     echo   "<p>Application deadline: ". finnish_dateformat($row['DEADLINE'])."</p>
