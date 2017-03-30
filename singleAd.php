@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nguyenlinh
- * Date: 28/03/2017
- * Time: 23.44
- */
 include 'includes/config.php';
 session_start();
 if(isset($_GET['expand'])){
@@ -122,7 +116,15 @@ if ($row = mysqli_fetch_array($result)){
           CONTAINER
           ---------->
         <div class="nav2">
-
+            <?php
+                if (isset($_SESSION['admin'])){ ?>
+                <div>
+                    <ul>
+                        <li><button>Edit</button></li>
+                        <li><button>Delete</button></li>
+                    </ul>
+                </div>
+            <?php } ?>
         </div>
         <!----------
           SIDE-NAV
@@ -242,30 +244,6 @@ if ($row = mysqli_fetch_array($result)){
     <div class="mini-footer">
         Job Advertisement Project
     </div>
-    <!--<script src="js/index.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.js"></script>
-        <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-
-
-        <script src="js/index.js"></script>
-    <script>function content_ajax() {
-
-            $.ajax({
-                    url: "getAd.php"
-                    , type: "get"
-                    , dateType: "text"
-                    , success: function (result) {
-
-                        $(".results").html(result)
-                    }
-                }
-            )
-        }</script>
-
-
-
-      <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
-      <script src="js/index.js"></script>-->
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.js"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
