@@ -18,7 +18,7 @@ $result = mysqli_query($conn,$query);
 while($row = mysqli_fetch_array($result))
 {
     $value = $row['TITLE'];
-    echo '<div class=\"advertisement\">';
+    echo '<div class=\"jobad\">';
     echo    '<a href="singleAd.php?expand='.$row['ID_ADV'].'">'.'<h2>'.$value.'</h2></a>';
 
     echo '<p>Location: Across all offices </p>';
