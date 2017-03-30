@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f2adff3-1e12-46d5-936d-f7e62b0b2d08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getAd.php" afterPath="$PROJECT_DIR$/getAd.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singleAd.php" afterPath="$PROJECT_DIR$/singleAd.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="212" column="14" lean-forward="true" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
+            <state relative-caret-position="482">
+              <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,26 +59,26 @@
       <file leaf-file-name="singleAd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/singleAd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="448">
+              <caret line="152" column="55" lean-forward="true" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
               <folding>
-                <marker date="1490876834577" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
+                <marker date="1490889627550" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="102" column="5" lean-forward="false" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+            <state relative-caret-position="287">
+              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getAd.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getAd.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getAd.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -149,10 +148,10 @@
         <option value="$PROJECT_DIR$/css/style_signup.css" />
         <option value="$PROJECT_DIR$/postad.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/singleAd.php" />
         <option value="$PROJECT_DIR$/ad.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/getAd.php" />
+        <option value="$PROJECT_DIR$/singleAd.php" />
       </list>
     </option>
   </component>
@@ -352,12 +351,12 @@
       <workItem from="1490812875789" duration="21000" />
       <workItem from="1490866214409" duration="2186000" />
       <workItem from="1490873245376" duration="1479000" />
-      <workItem from="1490877990379" duration="2655000" />
+      <workItem from="1490877990379" duration="3292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41162000" />
+    <option name="totallyTimeSpent" value="41799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1374" y="217" width="1382" height="744" extended-state="6" />
@@ -729,16 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singleAd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <marker date="1490876834577" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ad.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -754,22 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="212" column="14" lean-forward="true" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="102" column="5" lean-forward="false" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getAd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -777,6 +750,32 @@
           <folding>
             <marker date="1490889059586" expanded="true" signature="207:259" ph="SELECT * FRO... ADVERTISEMENT" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singleAd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="152" column="55" lean-forward="true" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="55" />
+          <folding>
+            <marker date="1490889627550" expanded="true" signature="183:269" ph="SELECT * FRO... ADVERTISEMENT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
