@@ -4,14 +4,13 @@ session_start();
 if(isset($_GET['expand'])){
 
     $query= "SELECT * FROM `ADVERTISEMENT` WHERE DEADLINE > NOW() AND ID_ADV ='".$_GET['expand']."'";
-
     $result = mysqli_query($conn,$query);
 
-if ($row = mysqli_fetch_array($result)){
+    if ($row = mysqli_fetch_array($result)){
 
-//}
-//    while($row = mysqli_fetch_array($result))
-//    {
+    //}
+    //    while($row = mysqli_fetch_array($result))
+    //    {
     ?>
 
     <!DOCTYPE html>
@@ -117,7 +116,23 @@ if ($row = mysqli_fetch_array($result)){
           ---------->
         <div class="nav2">
             <?php
-                if (isset($_SESSION['admin'])){ ?>
+
+                $sessionname = $_SESSION['username'];
+                $ad_id = $_GET['expand']; // ID of the ad this page is about
+                $namecorrect = false; // Checks whether the names match
+                // Checks whether the user on this page is the owner of this ad
+                $query2 = "SELECT * FROM COMPANY WHERE ID_COMP = (SELECT REF_COMP FROM ADVERTISEMENT WHERE ID_ADV = $ad_id)";
+                $result2 = mysqli_query($conn, $query2);
+                while ($row2 = mysqli_fetch_array($result2))
+                {
+                    $dbname = $row2['COMP_USERNAME'];
+                    if ($sessionname == $dbname)
+                    {
+                        $namecorrect = true;
+                    }
+                }
+                //Only admin and the employer who made this ad can edit/delete it
+                if ((isset($_SESSION['admin'])) || (isset($_SESSION['employer']) && $namecorrect == true)){ ?>
                 <div>
                     <ul>
                         <li><button>Edit</button></li>
