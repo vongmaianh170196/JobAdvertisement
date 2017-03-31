@@ -2,12 +2,6 @@
 include ('includes/config.php');
 session_start();
 ?>
-<!--
-	TO-DO:
-	-send inputted information to database via another .php file. Currently forms have placeholder action
-	-check if the new password is repeated correctly
-
--->
 <!DOCTYPE html>
 <html>
 

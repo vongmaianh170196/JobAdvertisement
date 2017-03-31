@@ -23,13 +23,11 @@ if(isset($_GET['expand'])){
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
 
-
     </head>
 <body onload=content_ajax() id="overlay" >
     <!----------
         NAVIGATION
         ---------->
-
     <div id="nav">
 
         <!-----------
@@ -39,7 +37,7 @@ if(isset($_GET['expand'])){
             <!--search-->
             <div class="search">
                 <a class="linkbutton" href="index.php">Home page</a>
-                <form action="http://google.com"/>
+                <!--<form action="http://google.com"/>-->
                 <input type="text" name="search" placeholder="Job...">
                 <input type="text" name="search" placeholder="Location...">
                 <input type="submit" value="Find"/>
@@ -55,10 +53,7 @@ if(isset($_GET['expand'])){
           </span>
                 <!--          /Display username-->
             </div>
-
             <!--END --search-->
-
-
             <!--Login -->
             <div class="login">
                 <ul>
@@ -98,17 +93,12 @@ if(isset($_GET['expand'])){
         <!-- END wrap-nav -->
     </div>
     <!--END NAV -->
-
-
-
     <div id="banner">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lahti_harbour_panorama_2.jpg/1280px-Lahti_harbour_panorama_2.jpg">
     </div>
-
     <!----------
         CONTAINER
         ---------->
-
     <div id="container">
 
         <!----------
@@ -136,7 +126,7 @@ if(isset($_GET['expand'])){
                 <div>
                     <ul>
                         <li><button>Edit</button></li>
-                        <li><button>Delete</button></li>
+                        <li><button onclick="deleteAd">Delete</button></li>
                     </ul>
                 </div>
             <?php } ?>
@@ -147,12 +137,9 @@ if(isset($_GET['expand'])){
         <div id="side-nav">
 
         </div>
-
-
         <!----------
           END SIDE-NAV
       ---------->
-
         <!----------
           CONTENT
       ---------->
@@ -174,7 +161,6 @@ if(isset($_GET['expand'])){
       </div>";
     ?>
         </div>
-
         <!----------
           END CONTENT
       ---------->
@@ -203,7 +189,6 @@ if(isset($_GET['expand'])){
                 <a href="http://facebook.com"><img src="https://image.flaticon.com/icons/png/512/145/145802.png"></a>
             </div>
             <!--icon-footer -->
-
 
             <div class="About-us">
                 <p>
@@ -249,13 +234,10 @@ if(isset($_GET['expand'])){
 
         </div>
         <!-- wrap footer -->
-
-
     </div>
     <!----------
     END FOOTER
     ---------->
-
     <div class="mini-footer">
         Job Advertisement Project
     </div>
@@ -263,6 +245,7 @@ if(isset($_GET['expand'])){
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.js"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/singlead.js"></script>
     <script>function content_ajax() {
 
             $.ajax({
