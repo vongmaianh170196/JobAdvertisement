@@ -126,8 +126,9 @@ if(isset($_GET['expand'])){
                 <div>
                     <ul>
                         <form action="editAd.php" method="post">
-                            <input type="hidden" id="jobdata" value="<?php echo htmlspecialchars(); ?>">
-                            <li><button>Edit</button></li>
+                            <input type="hidden" id="ad_id" name="ad_id" value="<?php echo htmlspecialchars($ad_id); ?>">
+                            <li><button type="submit" value="Submit">Edit</button></li>
+                        </form>
                         </form>
                         <li><button onclick="deleteAd">Delete</button></li>
                     </ul>

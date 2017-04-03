@@ -3,6 +3,20 @@ include ('includes/config.php');
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+if (isset($_SESSION['employer']))
+{
+    $user = $_SESSION['username'];
+    $query = "SELECT * FROM COMPANY WHERE COMP_USERNAME ='".$user."'";
+    $result = mysqli_query($conn, $query);
+    // With these you can set default values to input fields based on the company's info on db
+    while($row = mysqli_fetch_array($result))
+    {
+        $company_nameDb = $row['COMPANY_NAME'];
+        $locationDb = $row['LOCATION'];
+        $contactDb = $row['CONTACT'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -125,7 +139,7 @@ wrap-nav
                     <label for="contact"><h2>Contact</h2></label>
                     <!--                    <input type="email" name="email">-->
                     <!--                    <input type="phone" name="phone">-->
-                    <input type="text" name="contact">
+                    <input type="text" name="contact" value="<?php echo htmlspecialchars($contactDb); ?>">
 
                     <label for="numberOfVaccancies"><h2>Number of vaccancies (Optional)</h2></label>
                     <input type="number" name="numberOfVaccancies">

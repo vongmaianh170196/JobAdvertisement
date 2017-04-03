@@ -5,6 +5,18 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 if(isset($_SESSION['employer']) || isset($_SESSION['admin']))
 {
+    $ad_id = $_POST['ad_id'];
+    $query = "SELECT * FROM ADVERTISEMENT WHERE ID_ADV ='".$ad_id."'";
+    $result = mysqli_query($conn, $query);
+    while($row = mysqli_fetch_array($result))
+    {
+        $titleDb = $row['TITLE'];
+        $deadlineDb = $row['DEADLINE'];
+        $contactDb = $row['CONTACT'];
+        $requirementDb = $row['REQUIREMENT'];
+        $further_infoDb = $row['FURTHER_INFO'];
+        $num_of_vacDb = $row['NUMBER_OF_VACCANCIES'];
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,27 +127,28 @@ wrap-nav
                 -->
 
                 <label for="deadLineEdit"><h2>Deadline:</h2></label>
-                <input type="date" name="deadLineEdit">
+                <input type="date" name="deadLineEdit" value="<?php echo htmlspecialchars($deadlineDb); ?>">
 
                 <label for="titleEdit"><h2>Title:</h2></label>
-                <input type="text" name="titleEdit">
+                <input type="text" name="titleEdit" value="<?php echo htmlspecialchars($titleDb); ?>">
 
                 <label for="jobDescriptionEdit"><h2>Job Description</h2></label>
-                <textarea id="" name="jobDescriptionEdit" rows="20" cols="90"  placeholder="Your description...">
+                <textarea id="" name="jobDescriptionEdit" rows="20" cols="90">
+                    <?php echo htmlspecialchars($requirementDb); ?>
 </textarea>
 
                 <label for="contactEdit"><h2>Contact</h2></label>
                 <!--                    <input type="email" name="email">-->
                 <!--                    <input type="phone" name="phone">-->
-                <input type="text" name="contactEdit">
+                <input type="text" name="contactEdit" value="<?php echo htmlspecialchars($contactDb); ?>">
 
                 <label for="numberOfVaccanciesEdit"><h2>Number of vaccancies (Optional)</h2></label>
-                <input type="number" name="numberOfVaccanciesEdit">
+                <input type="number" name="numberOfVaccanciesEdit" value="<?php echo htmlspecialchars($num_of_vacDb); ?>">
 
                 <label for="furtherInformationEdit"><h2>Further information (Optional)</h2>
                     <p class="optional">Optional</p></label>
-                <textarea id="" name="furtherInformationEdit" rows="20" cols="90"
-                          placeholder="Further information...">
+                <textarea id="" name="furtherInformationEdit" rows="20" cols="90">
+                    <?php echo htmlspecialchars($further_infoDb); ?>
 </textarea>
 
                 <button id="submitAPost" type="submit">Submit</button>
