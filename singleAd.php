@@ -125,7 +125,10 @@ if(isset($_GET['expand'])){
                 if ((isset($_SESSION['admin'])) || (isset($_SESSION['employer']) && $namecorrect == true)){ ?>
                 <div>
                     <ul>
-                        <li><button>Edit</button></li>
+                        <form action="editAd.php" method="post">
+                            <input type="hidden" id="jobdata" value="<?php echo htmlspecialchars(); ?>">
+                            <li><button>Edit</button></li>
+                        </form>
                         <li><button onclick="deleteAd">Delete</button></li>
                     </ul>
                 </div>
@@ -148,7 +151,7 @@ if(isset($_GET['expand'])){
 
         $value = $row['TITLE'];
 
-        echo '<div class=\"advertisement\">';
+        echo '<div class=\"jobad\">';
 
         echo    '<h1>'.$value.'</h1>';
         echo '<p>Location: Across all offices </p>';

@@ -51,6 +51,22 @@ if (isset($_POST["deadLine"])
 
 
     }
+// If editing instead of creating:
+elseif (isset($_POST["deadLineEdit"])
+    && isset($_POST["titleEdit"])
+    && isset($_POST["contactEdit"])
+    && isset($_POST["jobDescriptionEdit"])
+    and strlen($_POST["deadLineEdit"]) >=1 &&
+    strlen($_POST["titleEdit"]) >=1 &&
+    strlen($_POST["contactEdit"]) >=1 &&
+    strlen($_POST["jobDescriptionEdit"]) >=1)
+{
+    // Unfinished
+    $deadlineEdit = $_POST["deadLineEdit"];
+    $stmt = $conn->prepare("UPDATE ADVERTISEMENT SET TITLE = ?, DEADLINE = ?, CONTACT = ?, REQUIREMENT = ?, FURTHER_INFO = ?, NUMBER_OF_VACCANCIES = ? WHERE ID_ADV = ?");
+    $stmt->bind_param("sssssii"); // Does string work with datetime?
+}
+
 else
     {
     echo ("<SCRIPT LANGUAGE='JavaScript'>

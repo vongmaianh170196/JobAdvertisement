@@ -3,6 +3,8 @@ include ('includes/config.php');
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+if(isset($_SESSION['employer']) || isset($_SESSION['admin']))
+{
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,14 +28,14 @@ wrap-nav
 ------------->
     <div class="wrap-nav">
         <!--search-->
-        <div class="search">
-            <a class="linkbutton" href="index.php">Home page</a>
-            <!--<form action="postad.php" />-->
-            <input type="text" name="search" placeholder="Job...">
-            <input type="text" name="search" placeholder="Location...">
-            <input type="submit" value="Find" />
-        </div>
-        <!--END --search-->
+                <div class="search">
+                    <a class="linkbutton" href="index.php">Home page</a>
+                    <!--<form action="postad.php" />-->
+                    <input type="text" name="search" placeholder="Job...">
+                    <input type="text" name="search" placeholder="Location...">
+                    <input type="submit" value="Find" />
+    </div>
+    <!--END --search-->
     <!--Login -->
     <div class="login">
         <ul>
@@ -93,54 +95,54 @@ wrap-nav
         <!--nav2 -->
         <div>
             <?php
-//            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
-//                echo "Sorry You cannot access to this section. This is for employer only";
-//            }
-//            else if(isset($_SESSION['employer'])) {
+            //            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
+            //                echo "Sorry You cannot access to this section. This is for employer only";
+            //            }
+            //            else if(isset($_SESSION['employer'])) {
 
 
-                ?>
+            ?>
 
-                <form action="ad.php" method="post">
-                    <h1>POST A JOB</h1>
-                    <br>
-                    <br>
-                    <br>
-                    <!--
+            <form action="ad.php" method="post">
+                <h1>EDIT JOB</h1>
+                <br>
+                <br>
+                <br>
+                <!--
 
-                                        <label for="postDate"><h2>Publish date:</h2></label>
-                                        <input type="datetime-local" name="postDate">
-                    -->
+                                    <label for="postDate"><h2>Publish date:</h2></label>
+                                    <input type="datetime-local" name="postDate">
+                -->
 
-                    <label for="deadLine"><h2>Deadline:</h2></label>
-                    <input type="date" name="deadLine">
+                <label for="deadLineEdit"><h2>Deadline:</h2></label>
+                <input type="date" name="deadLineEdit">
 
-                    <label for="title"><h2>Title:</h2></label>
-                    <input type="text" name="title">
+                <label for="titleEdit"><h2>Title:</h2></label>
+                <input type="text" name="titleEdit">
 
-                    <label for="jobDescription"><h2>Job Description</h2></label>
-                    <textarea id="" name="jobDescription" rows="20" cols="90"  placeholder="Your description...">
+                <label for="jobDescriptionEdit"><h2>Job Description</h2></label>
+                <textarea id="" name="jobDescriptionEdit" rows="20" cols="90"  placeholder="Your description...">
 </textarea>
 
-                    <label for="contact"><h2>Contact</h2></label>
-                    <!--                    <input type="email" name="email">-->
-                    <!--                    <input type="phone" name="phone">-->
-                    <input type="text" name="contact">
+                <label for="contactEdit"><h2>Contact</h2></label>
+                <!--                    <input type="email" name="email">-->
+                <!--                    <input type="phone" name="phone">-->
+                <input type="text" name="contactEdit">
 
-                    <label for="numberOfVaccancies"><h2>Number of vaccancies (Optional)</h2></label>
-                    <input type="number" name="numberOfVaccancies">
+                <label for="numberOfVaccanciesEdit"><h2>Number of vaccancies (Optional)</h2></label>
+                <input type="number" name="numberOfVaccanciesEdit">
 
-                    <label for="furtherInformation"><h2>Further information (Optional)</h2>
-                        <p class="optional">Optional</p></label>
-                    <textarea id="" name="furtherInformation" rows="20" cols="90"
-                              placeholder="Further information...">
+                <label for="furtherInformationEdit"><h2>Further information (Optional)</h2>
+                    <p class="optional">Optional</p></label>
+                <textarea id="" name="furtherInformationEdit" rows="20" cols="90"
+                          placeholder="Further information...">
 </textarea>
 
-                    <button id="submitAPost" type="submit">Submit</button>
-                </form>
+                <button id="submitAPost" type="submit">Submit</button>
+            </form>
 
-                <?php
-//            }
+            <?php
+            //            }
             ?>
 
 
@@ -241,7 +243,6 @@ END FOOTER
 <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
 </body>
-
-
-
 </html>
+<?php }
+?>
