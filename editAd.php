@@ -46,6 +46,17 @@ wrap-nav
                     <input type="text" name="search" placeholder="Job...">
                     <input type="text" name="search" placeholder="Location...">
                     <input type="submit" value="Find" />
+                    <!--          Display username-->
+                    <span > <?php
+                        if (!isset($_SESSION['username'])){
+                            echo 'Username will be displayed here after login';
+                        }
+                        else{
+                            echo $_SESSION['username'];
+                        }
+                        ?>
+          </span>
+                    <!--          /Display username-->
     </div>
     <!--END --search-->
     <!--Login -->
@@ -116,6 +127,7 @@ wrap-nav
             ?>
 
             <form action="ad.php" method="post">
+                <input type="hidden" id="ad_id" name="ad_id" value="<?php echo htmlspecialchars($ad_id); ?>">
                 <h1>EDIT JOB</h1>
                 <br>
                 <br>

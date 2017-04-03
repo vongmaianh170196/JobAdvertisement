@@ -46,6 +46,17 @@ wrap-nav
             <input type="text" name="search" placeholder="Job...">
             <input type="text" name="search" placeholder="Location...">
             <input type="submit" value="Find" />
+            <!--          Display username-->
+            <span > <?php
+                if (!isset($_SESSION['username'])){
+                    echo 'Username will be displayed here after login';
+                }
+                else{
+                    echo $_SESSION['username'];
+                }
+                ?>
+          </span>
+            <!--          /Display username-->
         </div>
         <!--END --search-->
     <!--Login -->

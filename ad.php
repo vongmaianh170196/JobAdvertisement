@@ -52,19 +52,36 @@ if (isset($_POST["deadLine"])
 
     }
 // If editing instead of creating:
-elseif (isset($_POST["deadLineEdit"])
-    && isset($_POST["titleEdit"])
-    && isset($_POST["contactEdit"])
-    && isset($_POST["jobDescriptionEdit"])
-    and strlen($_POST["deadLineEdit"]) >=1 &&
-    strlen($_POST["titleEdit"]) >=1 &&
-    strlen($_POST["contactEdit"]) >=1 &&
-    strlen($_POST["jobDescriptionEdit"]) >=1)
+elseif (isset($_POST['deadLineEdit'])
+    && isset($_POST['titleEdit'])
+    && isset($_POST['contactEdit'])
+    && isset($_POST['jobDescriptionEdit'])
+    and strlen($_POST['deadLineEdit']) >=1 &&
+    strlen($_POST['titleEdit']) >=1 &&
+    strlen($_POST['contactEdit']) >=1 &&
+    strlen($_POST['jobDescriptionEdit']) >=1)
 {
     // Unfinished
-    $deadlineEdit = $_POST["deadLineEdit"];
-    $stmt = $conn->prepare("UPDATE ADVERTISEMENT SET TITLE = ?, DEADLINE = ?, CONTACT = ?, REQUIREMENT = ?, FURTHER_INFO = ?, NUMBER_OF_VACCANCIES = ? WHERE ID_ADV = ?");
-    $stmt->bind_param("sssssii"); // Does string work with datetime?
+    $titleEdit = $_POST['titleEdit'];
+    $ad_id = $_POST['ad_id'];
+
+    $stmt = $conn->prepare("UPDATE ADVERTISEMENT SET TITLE = ?, DEADLINE = ?, CONTACT = ?, REQUIREMENT = ?, 
+        FURTHER_INFO = ?, NUMBER_OF_VACCANCIES = ? WHERE ID_ADV = ?");
+    $stmt->bind_param("sssssii", $_POST['titleEdit'], $_POST['deadLineEdit'], $_POST['contactEdit'], $_POST['jobDescriptionEdit'],
+        $_POST['furtherInformationEdit'], $_POST['numberOfVaccanciesEdit'], $ad_id); // Does string work with datetime?
+    if($stmt->execute())
+    {
+        echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Job advertisement edited successfully!')
+                    window.location.href='singleAd.php?expand=".$ad_id."'
+                    </SCRIPT>");
+    }
+    else{
+        echo ("<SCRIPT LANGUAGE='JavaScript'>
+                    window.alert('Error.')
+                    window.location.href='singleAd.php?expand=".$ad_id."'
+                    </SCRIPT>");
+    }
 }
 
 else
