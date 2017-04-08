@@ -1,6 +1,14 @@
 <?php
 include ('includes/config.php');
 session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$IdQuery = "SELECT ID FROM STUDENT WHERE STU_USERNAME = '".$_SESSION['username']."'";
+$result = mysqli_query($conn,$IdQuery);
+while ($row= mysqli_fetch_array($result)){
+
+    $_SESSION['stu_id']= $row['ID'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +16,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Student Profile</title>
-    <link rel="stylesheet" href="css/style_profile.css" />
+    <link rel="stylesheet" href="style_profile.css" />
 </head>
 
 <body id="overlay">
@@ -137,20 +145,21 @@ wrap-nav
   CONTENT
 ---------->
     <div id="content">
+        
         <div class="contentbox" id="profilebox">
             <form id="infoform" method="post" action="profileedit.php">
                 <h2>Edit profile information</h2>
                 <table class="profileinfo">
                     <tr>
-                        <td>First name </td>
+                        <td class="field_name">First name </td>
                         <td> <input type="text" name="fname" required="required" /></td>
                     </tr>
                     <tr>
-                        <td>Last name </td>
+                        <td class="field_name">Last name </td>
                         <td> <input type="text" name="lname" required="required" /></td>
                     </tr>
                     <tr>
-                        <td>Faculty </td>
+                        <td class="field_name">Faculty </td>
                         <td><select name="faculty">
                                 <option value="Faculty of Business">Faculty of Business</option>
                                 <option value="Faculty of Technology">Faculty of Technology</option>
@@ -160,40 +169,68 @@ wrap-nav
                             </select></td>
                     </tr>
                     <tr>
-                        <td>Degree </td>
+                        <td class="field_name">Degree</td>
                         <td> <input type="radio" name="degree" value="Bachelor's Degree" required="required" /> Bachelor's degree </td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2"></td>
+                  </tr>
+                  <tr>
+                        <td></td>
                         <td> <input type="radio" name="degree" value="Master's Degree" required="required" /> Master's degree </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td> <input type="radio" name="degree" value="Doctorate" required="required" /> Doctorate </td>
                     </tr>
-                    <tr>
-                        <td> <input type="radio" name="degree" value="Doctorate" required="required" /> Doctorate </td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">Language skills </td>
+                 <tr>
+                        <td class="field_name" >Language skills </td>
                         <td> <input type="checkbox" name="english" /> English </td>
-                    </tr>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td> <input type="checkbox" name="finnish" /> Finnish </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td> <input type="checkbox" name="swedish" /> Swedish </td>
+                  </tr>
                     <tr>
-                        <td> <input type="checkbox" name="finnish" /> Finnish </td>
+                        <td class="field_name" >Working experience </td>
+                        <td>
+                          <div class="short_input">
+                             Years:<input   type="number" name="years" min="0" required="required" />
+                             Months:<input type="number" name="months" min="0" max="11" required="required" /> 
+                  </div>
+                            </td>
                     </tr>
+<!--        skill            -->
                     <tr>
-                        <td> <input type="checkbox" name="swedish" /> Swedish </td>
+                        <td>Skills: </td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                        <td> <textarea name="skills" cols="50" rows="10" maxlength="300" required="required" id="skills" placeholder="Separate skills by comma eg: C#, PHP, Agile...">
+                                <?
+                                $query = "SELECT SKIll FROM STUDENT_SKILL WHERE REF_STUDENT = '".$_SESSION['stu_id']."'";
+                                $result = mysqli_query($conn, $query);
+                                while ($row = mysqli_fetch_array($result)){
+                                    echo $row['SKIll'].", ";
+                                }
+                                ?>
+                            </textarea> </td>
                     </tr>
-                    <tr>
-                        <td rowspan="2">Working experience </td>
-                        <td> Years: <input type="number" name="years" min="0" required="required" /> </td>
-                    </tr>
-                    <tr>
-                        <td> Months: <input type="number" name="months" min="0" max="11" required="required" /> </td>
-                    </tr>
+<!--        skill            -->
                     <tr>
                         <td>Other info: </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td> <textarea name="profiletext" cols="50" rows="10" maxlength="300" required="required"></textarea> </td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td> <button type="submit" value="Submit">Submit</button><button type="reset" value="Reset">Cancel</button </td>
+                        <td> <button type="submit" value="Submit" id="btnSubmit">Submit</button>
+                            <button type="reset" value="Reset">Cancel</button> </td>
                     </tr>
                 </table>
             </form>
@@ -343,6 +380,24 @@ END FOOTER
 
 <script src="js/index.js"></script>
 <script src="js/profile.js"></script>
+<script>
+    $(document).on('click','#btnSubmit', function addSkills () {
+          var  skills= $('#skills').val().split(',')
+
+        $.ajax({
+                url: "skills.php"
+                , type: "post"
+                , dateType: "text"
+                , data: {
+                    skills: skills
+                }
+                , success: function (result) {
+
+                }
+            }
+        )
+    });
+</script>
 
 </body>
 
