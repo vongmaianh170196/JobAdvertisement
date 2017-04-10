@@ -9,6 +9,27 @@ while ($row= mysqli_fetch_array($result)){
 
     $_SESSION['stu_id']= $row['ID'];
 }
+// initialization in case no profile data exists yet
+$firstnameDb = "";
+$lastnameDb = "";
+$monthsDb = 0;
+$yearsDb = 0;
+$profiletextDb = "";
+// gets the data that user has previously submitted
+// not included: degree and faculty, because not text fields
+$query = "SELECT * FROM STUDENT_INFO WHERE REF_STUDENT ='".$_SESSION['stu_id']."'";
+$result = mysqli_query($conn, $query);
+while($row = mysqli_fetch_array($result))
+{
+    $firstnameDb = $row['FIRSTNAME'];
+    $lastnameDb = $row['LASTNAME'];
+    $profiletextDb = $row['PROFILE_TEXT'];
+    // Calculates the years and months from the database's work experience column (which is just total months)
+    $monthsDb = $row['WORK_EXPERIENCE'] % 12; // modulo
+    $yearsDb = $row['WORK_EXPERIENCE'] - $monthsDb;
+    $yearsDb = $yearsDb / 12; // division
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -152,11 +173,11 @@ wrap-nav
                 <table class="profileinfo">
                     <tr>
                         <td class="field_name">First name </td>
-                        <td> <input type="text" name="fname" required="required" /></td>
+                        <td> <input type="text" name="fname" required="required" value="<?php echo htmlspecialchars($firstnameDb); ?>" /></td>
                     </tr>
                     <tr>
                         <td class="field_name">Last name </td>
-                        <td> <input type="text" name="lname" required="required" /></td>
+                        <td> <input type="text" name="lname" required="required" value="<?php echo htmlspecialchars($lastnameDb); ?>" /></td>
                     </tr>
                     <tr>
                         <td class="field_name">Faculty </td>
@@ -196,8 +217,8 @@ wrap-nav
                         <td class="field_name" >Working experience </td>
                         <td>
                           <div class="short_input">
-                             Years:<input   type="number" name="years" min="0" required="required" />
-                             Months:<input type="number" name="months" min="0" max="11" required="required" /> 
+                             Years:<input type="number" name="years" min="0" required="required" value="<?php echo htmlspecialchars($yearsDb); ?>" />
+                             Months:<input type="number" name="months" min="0" max="11" required="required" value="<?php echo htmlspecialchars($monthsDb); ?>" />
                   </div>
                             </td>
                     </tr>
@@ -223,7 +244,7 @@ wrap-nav
                     </tr>
                     <tr>
                         <td></td>
-                        <td> <textarea name="profiletext" cols="50" rows="10" maxlength="300" required="required"></textarea> </td>
+                        <td> <textarea name="profiletext" cols="50" rows="10" maxlength="300" required="required"><?php echo htmlspecialchars($profiletextDb); ?></textarea> </td>
                     </tr>
                     <tr>
                         <td></td>
