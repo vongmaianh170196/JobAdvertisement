@@ -29,7 +29,6 @@ while($row = mysqli_fetch_array($result))
     $yearsDb = $row['WORK_EXPERIENCE'] - $monthsDb;
     $yearsDb = $yearsDb / 12; // division
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -201,18 +200,27 @@ wrap-nav
                     <td></td>
                     <td> <input type="radio" name="degree" value="Doctorate" required="required" /> Doctorate </td>
                     </tr>
+
                  <tr>
                         <td class="field_name" >Language skills </td>
-                        <td> <input type="checkbox" name="english" /> English </td>
+                        <td></td>
                   </tr>
-                  <tr>
-                    <td></td>
-                    <td> <input type="checkbox" name="finnish" /> Finnish </td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td> <input type="checkbox" name="swedish" /> Swedish </td>
-                  </tr>
+                    <?php
+                    // Fetch languages
+                    $query = "SELECT LANGUAGE FROM LANGUAGES";
+                    $result = mysqli_query($conn, $query);
+                    while($row = mysqli_fetch_array($result))
+                    {
+                        $listlanguage = $row['LANGUAGE'];
+                    ?>
+                        <tr>
+                            <td></td>
+                            <td> <input type="checkbox" name="language[]" value="<?php echo $listlanguage; ?>" /> <?php echo $listlanguage; ?> </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+
                     <tr>
                         <td class="field_name" >Working experience </td>
                         <td>

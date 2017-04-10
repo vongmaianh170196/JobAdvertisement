@@ -28,6 +28,24 @@ if(isset($_POST['fname']) and isset($_POST['lname']) and isset($_POST['faculty']
         $stu_username = $_SESSION['username'];
         $profiletext = $_POST['profiletext'];
 
+        // Getting id from database, could be used for lots of stuff
+        $stmt = $conn->prepare("SELECT ID FROM STUDENT WHERE STU_USERNAME = ?");
+        $stmt->bind_param("s", $stu_username);
+        $stmt->execute();
+        $stmt->bind_result($idDb);
+        while ($stmt->fetch())
+        {
+            echo '<p style="display: none;">'.$idDb.'</p>';
+        }
+
+        // Language stuff goes separately
+        foreach($_POST["language"] as $lang)
+        {
+            $query = "INSERT INTO STUDENT_LANGUAGE (REF_STU, REF_LANG) SELECT '.$idDb.', LANG_ID FROM LANGUAGES WHERE LANGUAGE = '.$lang.'";
+            mysqli_query($conn,$query);
+        }
+
+        // Inserting student_info stuff
         $stmt = $conn->prepare("INSERT INTO STUDENT_INFO (FIRSTNAME, LASTNAME, FACULTY, DEGREE, WORK_EXPERIENCE, PROFILE_TEXT, REF_STUDENT) SELECT ?, ?, ?, ?, ?, ?, ID FROM STUDENT WHERE STU_USERNAME = ?");
         $stmt->bind_param("sssssss", $fname, $lname, $faculty, $degree, $months, $profiletext, $stu_username);
 
