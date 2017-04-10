@@ -145,9 +145,7 @@ wrap-nav
                 <input type="text" name="titleEdit" value="<?php echo htmlspecialchars($titleDb); ?>">
 
                 <label for="jobDescriptionEdit"><h2>Job Description</h2></label>
-                <textarea id="" name="jobDescriptionEdit" rows="20" cols="90">
-                    <?php echo htmlspecialchars($requirementDb); ?>
-</textarea>
+                <textarea id="" name="jobDescriptionEdit" rows="20" cols="90" placeholder="Your description..."><?php echo htmlspecialchars($requirementDb); ?></textarea>
 
                 <label for="contactEdit"><h2>Contact</h2></label>
                 <!--                    <input type="email" name="email">-->
@@ -159,9 +157,7 @@ wrap-nav
 
                 <label for="furtherInformationEdit"><h2>Further information (Optional)</h2>
                     <p class="optional">Optional</p></label>
-                <textarea id="" name="furtherInformationEdit" rows="20" cols="90">
-                    <?php echo htmlspecialchars($further_infoDb); ?>
-</textarea>
+                <textarea id="" name="furtherInformationEdit" rows="20" cols="90" placeholder="Further information..."><?php echo htmlspecialchars($further_infoDb); ?></textarea>
 
                 <button id="submitAPost" type="submit">Submit</button>
             </form>

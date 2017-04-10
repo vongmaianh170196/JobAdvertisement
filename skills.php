@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nguyenlinh
- * Date: 08/04/2017
- * Time: 22.22
- */
 include ('includes/config.php');
 session_start();
 ini_set('display_errors', 1);
