@@ -39,10 +39,17 @@ if(isset($_POST['fname']) and isset($_POST['lname']) and isset($_POST['faculty']
         }
 
         // Language stuff goes separately
-        foreach($_POST["language"] as $lang)
+        if (isset($_POST["language"]))
         {
-            $query = "INSERT INTO STUDENT_LANGUAGE (REF_STU, REF_LANG) SELECT '.$idDb.', LANG_ID FROM LANGUAGES WHERE LANGUAGE = '.$lang.'";
+            // Delete old language selection
+            $query = "DELETE FROM STUDENT_LANGUAGE WHERE REF_STU = '".$idDb."'";
             mysqli_query($conn,$query);
+            // Insert newly inputted languages
+            foreach($_POST["language"] as $lang)
+            {
+                $query = "INSERT INTO STUDENT_LANGUAGE (REF_STU, REF_LANG) SELECT '".$idDb."', LANG_ID FROM LANGUAGES WHERE LANGUAGE = '".$lang."'";
+                mysqli_query($conn,$query);
+            }
         }
 
         // Inserting student_info stuff
