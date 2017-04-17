@@ -116,7 +116,11 @@ wrap-nav
   ---------->
     <div class="nav2">
         <!--nav2 -->
-        <div>
+        
+    </div>
+    <!--end nav2 -->
+<h1>EDIT JOB</h1>
+<div class="contentbox">
             <?php
             //            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
             //                echo "Sorry You cannot access to this section. This is for employer only";
@@ -128,7 +132,7 @@ wrap-nav
 
             <form action="ad.php" method="post">
                 <input type="hidden" id="ad_id" name="ad_id" value="<?php echo htmlspecialchars($ad_id); ?>">
-                <h1>EDIT JOB</h1>
+                
                 <br>
                 <br>
                 <br>
@@ -169,13 +173,8 @@ wrap-nav
 
 
         </div>
-    </div>
-    <!--end nav2 -->
 
 
-
-</div>
-</div>
 
 </div>
 <!----------

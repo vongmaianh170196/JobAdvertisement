@@ -104,7 +104,7 @@ if(isset($_GET['expand'])){
         <!----------
           CONTAINER
           ---------->
-        <div class="nav2">
+        <div class="nav2 twobtn">
             <?php
 
                 $sessionname = $_SESSION['username'];
