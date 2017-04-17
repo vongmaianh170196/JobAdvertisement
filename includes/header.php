@@ -6,10 +6,11 @@ wrap-nav
         <!--search-->
         <div class="search">
             <a class="linkbutton" href="index.php">Home page</a>
-            <!--<form action="http://google.com" />-->
-            <input type="text" name="search" placeholder="Job...">
-            <input type="text" name="search" placeholder="Location...">
-            <input type="submit" value="Find" />
+            <form id="jobsearch">
+                <input type="text" name="search" placeholder="Job...">
+                <input type="text" name="search" placeholder="Location...">
+                <input type="submit" value="Find" />
+            </form>
             <!--          Display username-->
             <span> <?php
                 if (!isset($_SESSION['username'])){
