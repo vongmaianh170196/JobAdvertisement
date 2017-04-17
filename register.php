@@ -28,52 +28,9 @@ include ('includes/config.php');
   NAVIGATION
   ---------->
 
-<<<<<<< HEAD
 <?php
 include_once ('includes/header.php');
 ?>
-=======
-<div id="nav">
-
-    <!-----------
-wrap-nav
-------------->
-    <div class="wrap-nav">
-     
-        <!--search-->
->>>>>>> e8bda1de7b1ae0460d2e0412fb3b9ecfebd9aab8
-
-        <div class="search">
- <a class="linkbutton" href="index.php">Home page</a>
-         <!--   <form action="postad.php" />
-            <input type="text" name="search" placeholder="Job...">
-            <input type="text" name="search" placeholder="Location...">
-            <input type="submit" value="Find" />
--->
-        </div>
-        <!--END --search-->
-        <!--Login -->
-        <div class="login">
-            <ul>
-                
-                
-            </ul>
-        </div>
-        <!--END login-->
-    </div>
-    <!-- END wrap-nav -->
-</div>
-<!--END NAV -->
-<br>
-</br>
-
-
-<div id="banner">
-    <img src="https://s10.postimg.org/mi0h0mg55/Untitled-2.jpg">
-</div>
-
-
-
         <div class="container">
             <div class="student">
                 <h1>Student</h1>

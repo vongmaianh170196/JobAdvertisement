@@ -43,11 +43,9 @@ while($row = mysqli_fetch_array($result))
 <!----------
   NAVIGATION
   ---------->
-<<<<<<< HEAD
 <?php
 include_once ('includes/header.php');
 ?>
-=======
 
 <div id="nav">
 
