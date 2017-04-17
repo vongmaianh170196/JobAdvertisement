@@ -25,7 +25,9 @@ include ('includes/config.php');
 
 <body>
 
-
+<?php
+include_once ('includes/header.php');
+?>
 
 
 <div class="container">

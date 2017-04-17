@@ -147,6 +147,9 @@ wrap-nav
                     <textarea id="" name="jobDescription" rows="20" cols="90"  placeholder="Your description...">
 </textarea>
 
+                    <label for="location"><h2>Location:</h2></label>
+                    <input type="text" name="location" value="<?php echo htmlspecialchars($locationDb); ?>">
+
                     <label for="contact"><h2>Contact</h2></label>
                     <!--                    <input type="email" name="email">-->
                     <!--                    <input type="phone" name="phone">-->

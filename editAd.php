@@ -16,6 +16,7 @@ if(isset($_SESSION['employer']) || isset($_SESSION['admin']))
         $requirementDb = $row['REQUIREMENT'];
         $further_infoDb = $row['FURTHER_INFO'];
         $num_of_vacDb = $row['NUMBER_OF_VACCANCIES'];
+        $locationDb = $row['LOCATION'];
     }
 ?>
 <!DOCTYPE html>
@@ -146,6 +147,9 @@ wrap-nav
 
                 <label for="jobDescriptionEdit"><h2>Job Description</h2></label>
                 <textarea id="" name="jobDescriptionEdit" rows="20" cols="90" placeholder="Your description..."><?php echo htmlspecialchars($requirementDb); ?></textarea>
+
+                <label for="locationEdit"><h2>Location:</h2></label>
+                <input type="text" name="locationEdit" value="<?php echo htmlspecialchars($locationDb); ?>">
 
                 <label for="contactEdit"><h2>Contact</h2></label>
                 <!--                    <input type="email" name="email">-->
