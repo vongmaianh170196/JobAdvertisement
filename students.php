@@ -116,29 +116,34 @@ wrap-nav
     <div id="side-nav">
         <h3>Search students</h3>
         <div class="searchoption">
-            <p>Per faculty</p>
-            <form id="facultysearch">
-                <td><select name="faculty">
-                        <option value="Faculty of Business">Faculty of Business</option>
-                        <option value="Faculty of Technology">Faculty of Technology</option>
-                        <option value="Faculty of Healthcare">Faculty of Healthcare</option>
-                        <option value="Faculty of Arts">Faculty of Arts</option>
-                        <option value="Faculty of Humanities">Faculty of Humanities</option>
-                    </select>
-                </td>
+            <p>Per degree</p>
+            <form id="degreesearch" method="post" action="students.php">
+                <select name="degreesearch">
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Doctorate">Doctorate</option>
+                </select>
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </div>
 
         <div class="searchoption">
-            <p>Per degree</p>
-            <form id="degreesearch">
-                <td><select name="degree">
-                        <option value="Bachelor's Degree">Bachelor's degree</option>
-                        <option value="Master's Degree">Master's degree</option>
-                        <option value="Doctorate">Doctorate</option>
-                    </select>
-                </td>
+            <p>Per language</p>
+            <form id="langsearch" method="post" action="students.php">
+                <select name="langsearch">
+                <?php
+                // Fetch languages
+                $query = "SELECT LANGUAGE FROM LANGUAGES";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result))
+                {
+                    $listlanguage = $row['LANGUAGE'];
+                ?>
+                    <option value="<?php echo $listlanguage; ?>"><?php echo $listlanguage; ?></option>
+                <?php
+                    }
+                ?>
+                </select>
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </div>
@@ -156,21 +161,33 @@ wrap-nav
   CONTENT
 ---------->
     <div id="content">
-        <button onClick="allStudents()">All students</button>
+        <a class="linkbutton" href="students.php">All students</a>
 
         <div class="contentbox" id="allstudentsbox">
             <?php
-
-            $query = "SELECT * FROM STUDENT_INFO ORDER BY LASTNAME, FIRSTNAME";
-            $result = mysqli_query($conn,$query);
-            echo "<h2>Students alphabetically</h2>";
-            include_once ('includes/studentloop.php'); // The while loop of echoing
-
-            // better sorting methods really:
-            // - skill
-            // - language
-            // etc
-
+            if (isset($_POST['degreesearch']))
+            {
+                $degree = $_POST['degreesearch'];
+                $query = "SELECT * FROM STUDENT_INFO WHERE DEGREE = '".$degree."' ORDER BY LASTNAME, FIRSTNAME";
+                $result = mysqli_query($conn,$query);
+                echo "<h2>Students with degree: '".$degree."'</h2>";
+                include_once ('includes/studentloop.php'); // The while loop of echoing
+            }
+            else if (isset($_POST['langsearch']))
+            {
+                $language = $_POST['langsearch'];
+                $query = "SELECT * FROM STUDENT_INFO WHERE REF_STUDENT IN (SELECT REF_STU FROM STUDENT_LANGUAGE WHERE REF_LANG = (SELECT LANG_ID FROM LANGUAGES WHERE LANGUAGE = '".$language."'))";
+                $result = mysqli_query($conn,$query);
+                echo "<h2>Students with language: '".$language."'</h2>";
+                include_once ('includes/studentloop.php');
+            }
+            else
+            {
+                $query = "SELECT * FROM STUDENT_INFO ORDER BY LASTNAME, FIRSTNAME";
+                $result = mysqli_query($conn,$query);
+                echo "<h2>All students alphabetically</h2>";
+                include_once ('includes/studentloop.php');
+            }
             // Todo: functionality for button. More buttons for search.
             ?>
         </div>
