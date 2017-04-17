@@ -7,11 +7,88 @@
 </head>
 
 <body id="overlay">
+<!----------
+    NAVIGATION
+    ---------->
 
+<div id="nav">
+
+    <!-----------
+    wrap-nav
+    ------------->
+    <div class="wrap-nav">
+        <!--search-->
+        <div class="search">
+            <a class="linkbutton" href="index.php">Home page</a>
+<br></br>
+                                    <!--          Display username-->
+            <span > <?php
+                if (!isset($_SESSION['username'])){
+                    echo 'Username will be displayed here after login';
+                }
+                else{
+                    echo $_SESSION['username'];
+                }
+                ?>
+          </span>
+            <!--          /Display username-->
+        </div>
+
+<<<<<<< HEAD
 <?php
 include_once ('includes/header.php');
 ?>
+=======
+        <!--END --search-->
 
+
+        <!--Login -->
+        <div class="login">
+            <ul>
+                <li><a class="linkbutton" href="postad.php">Post a Job</a></li>
+                <?php
+                if (isset($_SESSION['employer'])){ ?>
+                    <li><a class="linkbutton" href="students.php">Search Students</a></li>
+                <?php } ?>
+
+                <?php
+                if (isset($_SESSION['student'])){ ?>
+                    <li><a class="linkbutton" href="profile.php">Profile</a></li>
+                <?php } ?>
+                <li>
+                    <!--              log in log out-->
+                    <?php
+
+                    if (!isset($_SESSION['username'])){
+                        echo '<a class="linkbutton" href="login.php">Login</a>';
+                    }
+                    else{
+                        echo '<a class="linkbutton" href="logout.php">Logout</a>';
+                    }
+                    ?>
+                    <!--              /log in log out-->
+                </li>
+                <?php
+                if (!isset($_SESSION['username'])){
+                    echo '<li><a class="linkbutton" href="register.php">Register</a></li>';
+                }
+                ?>
+
+            </ul>
+        </div>
+        <!--END login-->
+    </div>
+    <!-- END wrap-nav -->
+</div>
+<!--END NAV -->
+
+>>>>>>> e8bda1de7b1ae0460d2e0412fb3b9ecfebd9aab8
+
+<div id="banner">
+    <img src="https://s10.postimg.org/mi0h0mg55/Untitled-2.jpg">
+
+</div>
+<br></br>
 <div class="container">
     <div class="student">
         <h1>Student </h1>
