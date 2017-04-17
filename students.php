@@ -87,7 +87,7 @@ wrap-nav
 <!--END NAV -->
 <!--BANNER -->
 <div id="banner">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lahti_harbour_panorama_2.jpg/1280px-Lahti_harbour_panorama_2.jpg">
+    <img src="https://s10.postimg.org/mi0h0mg55/Untitled-2.jpg">
 </div>
 <!--END BANNER-->
 
@@ -123,6 +123,7 @@ wrap-nav
                         <option value="Master's Degree">Master's Degree</option>
                         <option value="Doctorate">Doctorate</option>
                 </select>
+                <br>
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </div>
@@ -144,6 +145,7 @@ wrap-nav
                     }
                 ?>
                 </select>
+                <br>
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </div>
@@ -152,6 +154,7 @@ wrap-nav
             <p>Per skill</p>
             <form id="skillsearch" method="post" action="students.php">
                 <input type="text" name="skillsearch" required="required" />
+                <br>
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </div>
@@ -165,9 +168,12 @@ wrap-nav
   CONTENT
 ---------->
     <div id="content">
-        <a class="linkbutton" href="students.php">All students</a>
+        
 
         <div class="contentbox" id="allstudentsbox">
+        <a class="linkbutton" href="students.php">All students</a>
+          <br>
+          </br>
             <?php
             if (isset($_POST['degreesearch']))
             {
