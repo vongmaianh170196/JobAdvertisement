@@ -51,7 +51,11 @@ include_once ('includes/header.php');
   ---------->
     <div class="nav2">
         <!--nav2 -->
-        <div>
+        
+    </div>
+    <!--end nav2 -->
+<h1>EDIT JOB</h1>
+<div class="contentbox">
             <?php
             //            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
             //                echo "Sorry You cannot access to this section. This is for employer only";
@@ -63,7 +67,7 @@ include_once ('includes/header.php');
 
             <form action="ad.php" method="post">
                 <input type="hidden" id="ad_id" name="ad_id" value="<?php echo htmlspecialchars($ad_id); ?>">
-                <h1>EDIT JOB</h1>
+                
                 <br>
                 <br>
                 <br>
@@ -107,13 +111,8 @@ include_once ('includes/header.php');
 
 
         </div>
-    </div>
-    <!--end nav2 -->
 
 
-
-</div>
-</div>
 
 </div>
 <!----------

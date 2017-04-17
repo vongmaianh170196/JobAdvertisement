@@ -50,7 +50,11 @@ include_once ('includes/header.php');
   ---------->
     <div class="nav2">
         <!--nav2 -->
-        <div>
+        
+    </div>
+    <!--end nav2 -->
+    <h1>POST A JOB</h1>
+<div class="contentbox">
             <?php
 //            if (!isset($_SESSION['username']) ||isset($_SESSION['student']) ){
 //                echo "Sorry You cannot access to this section. This is for employer only";
@@ -93,7 +97,7 @@ include_once ('includes/header.php');
                     <input type="number" name="numberOfVaccancies">
 
                     <label for="furtherInformation"><h2>Further information (Optional)</h2>
-                        <p class="optional">Optional</p></label>
+                        </label>
                     <textarea id="" name="furtherInformation" rows="20" cols="90"
                               placeholder="Further information...">
 </textarea>
@@ -108,13 +112,9 @@ include_once ('includes/header.php');
 
 
         </div>
-    </div>
-    <!--end nav2 -->
 
 
 
-</div>
-</div>
 
 </div>
 <!----------
