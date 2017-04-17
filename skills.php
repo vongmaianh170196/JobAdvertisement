@@ -16,11 +16,11 @@ if(isset($_POST['skills'])){
     }
     echo 'nhan duoc data';
     if(is_array($skillsArr)){
-        $deleteQuery = "DELETE FROM STUDENT_SKILL WHERE REF_STUDENT='".$stu_id."';";
+        $deleteQuery = "DELETE FROM STUDENT_SKILL WHERE REF_STU='".$stu_id."';";
         $result = mysqli_query($conn, $deleteQuery);
         foreach($skillsArr as $skill){
 
-            $query = "INSERT INTO STUDENT_SKILL (SKILL, REF_STUDENT) values ('".$skill."', '".$stu_id."')";
+            $query = "INSERT INTO STUDENT_SKILL (SKILL, REF_STU) values ('".$skill."', '".$stu_id."')";
             $result = mysqli_query($conn, $query);
         }
     }

@@ -149,7 +149,11 @@ wrap-nav
         </div>
 
         <div class="searchoption">
-
+            <p>Per skill</p>
+            <form id="skillsearch" method="post" action="students.php">
+                <input type="text" name="skillsearch" required="required" />
+                <button type="submit" value="Submit">Submit</button>
+            </form>
         </div>
 
     </div>
@@ -181,6 +185,14 @@ wrap-nav
                 echo "<h2>Students with language: '".$language."'</h2>";
                 include_once ('includes/studentloop.php');
             }
+            else if (isset($_POST['skillsearch']))
+            {
+                $skill = $_POST['skillsearch'];
+                $query = "SELECT * FROM STUDENT_INFO WHERE REF_STUDENT IN (SELECT REF_STU FROM STUDENT_SKILL WHERE SKILL = '".$skill."')";
+                $result = mysqli_query($conn,$query);
+                echo "<h2>Students with skill: '".$skill."'</h2>";
+                include_once ('includes/studentloop.php');
+            }
             else
             {
                 $query = "SELECT * FROM STUDENT_INFO ORDER BY LASTNAME, FIRSTNAME";
@@ -188,12 +200,9 @@ wrap-nav
                 echo "<h2>All students alphabetically</h2>";
                 include_once ('includes/studentloop.php');
             }
-            // Todo: functionality for button. More buttons for search.
             ?>
         </div>
-        <div class="contentbox">
 
-        </div>
     </div>
     <?php
     }

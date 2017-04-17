@@ -21,7 +21,7 @@
 			echo "<b>Skills: </b>";
 			echo "</p>";
 			echo "<ul>";
-            $queryskill = "SELECT SKILL FROM STUDENT_SKILL WHERE REF_STUDENT = '".$id."'";
+            $queryskill = "SELECT SKILL FROM STUDENT_SKILL WHERE REF_STU = '".$id."'";
             $resultskill = mysqli_query($conn, $queryskill);
             while($rowskill = mysqli_fetch_array($resultskill))
 			{

@@ -238,7 +238,7 @@ wrap-nav
                   <tr>
                     <td></td>
                         <td> <textarea name="skills" cols="50" rows="10" maxlength="300" required="required" id="skills" placeholder="Separate skills by comma eg: C#, PHP, Agile"><?php
-                                $query = "SELECT SKILL FROM STUDENT_SKILL WHERE REF_STUDENT = '".$_SESSION['stu_id']."'";
+                                $query = "SELECT SKILL FROM STUDENT_SKILL WHERE REF_STU = '".$_SESSION['stu_id']."'";
                                 $result = mysqli_query($conn, $query);
                                 while ($row = mysqli_fetch_array($result)){
                                     echo trim($row['SKILL']).", ";
