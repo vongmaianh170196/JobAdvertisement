@@ -94,7 +94,7 @@ if(isset($_GET['expand'])){
     </div>
     <!--END NAV -->
     <div id="banner">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lahti_harbour_panorama_2.jpg/1280px-Lahti_harbour_panorama_2.jpg">
+        <img src="https://s10.postimg.org/mi0h0mg55/Untitled-2.jpg">
     </div>
     <!----------
         CONTAINER
@@ -130,7 +130,7 @@ if(isset($_GET['expand'])){
                             <li><button type="submit" value="Submit">Edit</button></li>
                         </form>
                         </form>
-                        <li><button onclick="deleteAd">Delete</button></li>
+                        <li><button onclick="deleteAd" class="delete" >Delete</button></li>
                     </ul>
                 </div>
             <?php } ?>

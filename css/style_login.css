@@ -1,57 +1,245 @@
+#overlay{
+  background-color: rgb(233,233,233);
+
+}
+/*********
+ NAV
+*********/
+
+
+
+#nav ul li:hover{
+  background-color: rgb(0,177,237);
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 150%;
+  color: rgb(230,230,230);
+}
+
+.wrap-nav {
+margin: 0 auto;
+
+}
+
+.login{
+  float: right;
+}
+
+.search {
+  float: left;
+}
+
+.search input{
+  /*   display: inline-block; */
+  padding: 11px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 3px rgb(99,99,99);
+  margin: 17px 5px;
+  border: 1px solid #e5e5e5;
+}
+
+.search input[type="submit"]{
+  border: 1px solid rgb(222,222,222);
+
+  box-shadow: 0 0 3px rgb(22,22,22);
+}
+
+div.login{
+
+
+}
+
+/*.login ul li{
+  display: inline-block;
+  background-color: rgb(0,155,217);
+  padding: 8px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px rgb(0,155,217);
+  margin: 0 5px;
+}*/
+.login ul li{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+/*.login ul li:hover{
+  background-color: rgb(0,177,237);
+}*/
+
+ .linkbutton{
+  background-color: rgb(0,155,217);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px rgb(0,155,217);
+  margin: 0 5px;
+  color: white;
+}
+.linkbutton:hover{
+  background-color: rgb(0,177,237);
+  cursor: pointer;
+}
+.linkbutton:active {
+  position: relative;
+  top: 1px;
+}
+/*********
+banner
+*********/
+  #banner{
+  height: 40%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgb(222,221,200);
+}
+#banner{
+  overflow: hidden;
+}
+
+#banner img{
+
+  width: 100%;
+  height: 100%;
+
+}
+#nav{
+  width: 100%;
+  margin: 0 0 5px 0;
+}
+
+#container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+#side-nav{
+  float: left;
+  width: 20%;  
+  margin-top: -14px;
+}
+
+#content {
+  width: 78%; 
+  float: right;
+margin: auto;
+}
+
+#footer{
+  width: 100%;
+  clear:both;
+  background-color: rgb(0,155,217);
+}
+
+/*********
+ Font
+*********/
+
+p{
+ 
+  margin: 14px 0;
+  font-size: 1.50em;
+}
+
+h1{
+  color: rgb(0,155,217);
+}
+
+/*********
+ NAV
+*********/
+
+
+
+#nav ul li:hover{
+  background-color: rgb(0,177,237);
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 150%;
+  color: rgb(230,230,230);
+}
+
+.wrap-nav {
+   margin-top: 1%;
+  
+}
+
+.login{
+  float: right;
+}
+
+
+.linkbutton{
+	background-color: rgb(0,155,217);
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	padding: 8px 50px;
+	border-radius: 7px;
+	box-shadow: 0px 0px 2px rgb(0,155,217);
+	margin: 0 5px;
+}
+.linkbutton:hover{
+  background-color: rgb(0,177,237);
+  cursor: pointer;
+}
+.linkbutton:active {
+	position: relative;
+	top: 1px;
+}
+
+
 /**********
 GENERAL
 **********/
-body, html, #banner{
-  margin:0;
-  padding: 0;
-}
 
-#overlay {
-  background : url('https://www.xmple.com/wallpaper/linear-blue-white-gradient-1920x1080-c2-6495ed-ffffff-a-60-f-14.svg');
-  img: no-repeat;
+#overlay{
+  background-color: rgb(233,233,233);
+
 }
 
 #footer {
-  width : 100%;
-  clear : both;
-  background-color : rgb(0, 155, 217);
+width : 100%;
+clear : both;
+background-color : rgb(0, 155, 217);
 }
 p {
-  font-family : 'Pacifico', cursive;
-  margin : 14px 0;
-  font-size : 1.50em;
+
+margin : 14px 0;
+font-size : 1.50em;
 }
 
 
-
-#banner img {
-  width : 100%;
-  height : 200px;
-}
 
 .wrap-footer div {
-  width : 80%;
-  margin : 0% 2%;
+width : 80%;
+margin : 0% 2%;
 }
 .wrap-footer div {
-  display : inline-block;
-  width : 20%;
+display : inline-block;
+width : 20%;
 }
 #footer p, a {
-  color : white;
+color : white;
 }
 #footer a {
-  text-decoration : none;
+text-decoration : none;
 }
 #footer img {
-  max-height : 30px;
-  min-height : 50px;
+max-height : 30px;
+min-height : 50px;
 }
 #footer li {
-  list-style : none;
+list-style : none;
 }
 .icon-footer img {
-  margin : 0 5px;
+margin : 0 5px;
 }
 .icon-footer img:hover{
   background-color: rgba(204, 230, 255, 0.3);
@@ -59,62 +247,53 @@ p {
   border: 2px solid;
 }
 .wrap-footer a:hover {
-  color : rgb(212, 213, 212);
+color : rgb(212, 213, 212);
 }
-#side-nav button {
-  background-color : rgb(0, 177, 233);
-  color : white;
-  border-radius : 4px;
-  padding : 5px;
-  margin : 5px 0;
-}
-#side-nav button:hover {
-  background-color : rgb(0, 197, 255);
-}
+
 .title button {
-  background-color : rgb(0, 177, 233);
-  color : white;
-  border-radius : 4px;
-  padding : 5px;
-  margin : 5px 0;
+background-color : rgb(0, 177, 233);
+color : white;
+border-radius : 4px;
+padding : 5px;
+margin : 5px 0;
 }
 .title button:hover {
-  background-color : rgb(0, 197, 255);
+background-color : rgb(0, 197, 255);
 }
 .mini-footer {
-  background-color : rgb(0, 122, 200);
-  height : 30px;
-  width : 100%;
-  color : white;
+background-color : rgb(0, 122, 200);
+height : 30px;
+width : 100%;
+color : white;
 }
 @media screen and (max-width:1280px) {
-  .nav2 div {
-    float : left;
-    background-color : white;
-    height : 100px;
-    width : 100%;
-    box-shadow : 0 0 5px rgb(111, 111, 111);
-    margin : 20px 0;
-  }
-  .nav2 ul li {
-    display : inline-block;
-    background-color : rgb(0, 155, 217);
-    padding : 0.5% 10%;
-    border-radius : 1px;
-    box-shadow : 0 0 2px rgb(0, 155, 217);
-    margin : 1px 1px;
-  }
-  .nav2 ul li:hover {
-    background-color : rgb(0, 177, 237);
-  }
-  .nav2 a {
-    text-decoration : none;
-    font-size : 150%;
-    color : rgb(230, 230, 230);
-  }
+.nav2 div {
+float : left;
+background-color : white;
+height : 100px;
+width : 100%;
+box-shadow : 0 0 5px rgb(111, 111, 111);
+margin : 20px 0;
+}
+.nav2 ul li {
+display : inline-block;
+background-color : rgb(0, 155, 217);
+padding : 0.5% 10%;
+border-radius : 1px;
+box-shadow : 0 0 2px rgb(0, 155, 217);
+margin : 1px 1px;
+}
+.nav2 ul li:hover {
+background-color : rgb(0, 177, 237);
+}
+.nav2 a {
+text-decoration : none;
+font-size : 150%;
+color : rgb(230, 230, 230);
+}
 }
 body {
-  background : rgb(230, 230, 255);
+background : rgb(230, 230, 255);
 }
 
 .container {
@@ -127,12 +306,12 @@ body {
 .employer, .student {
   margin : 2% 0;
   padding : 2.5%;
-
+  
 }
 
 h2 {
-  font-family : 'Arvo', serif;
-  color : rgb(255, 255, 255);
+
+color : rgb(255, 255, 255);
 }
 
 
@@ -142,21 +321,21 @@ h2 {
 
 
 .employer, .student {
-  border-radius : 5%;
-  box-shadow : 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+border-radius : 5%;
+box-shadow : 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .employer {
-  background : rgba(0, 0, 102, 0.3);
+background : rgba(0, 0, 102, 0.3);
 }
 
 .student {
-  background : rgba(20, 200, 204, 0.5);
+background : rgba(20, 200, 204, 0.5);
 }
 
 
 h1 {
-  color : rgb(233, 233, 233);
+color : rgb(233, 233, 233);
 }
 
 .employer, .student{
@@ -172,7 +351,7 @@ SWITCH BUTTON
   margin: 10px 10px 24% 10px;
   background-color: #ffffff;
   box-shadow: 0px 1px 1px rgb(244,244,244);
-
+  
 }
 
 .btn-employer:hover, .btn-student:hover{
@@ -194,16 +373,16 @@ form form form login & password
 
 input[type=text],
 input[type=password]{
-  width: 100%;
-  padding: 15px 20px;
-  margin: 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 2.5%;
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: rgb(233,233,233);
+    width: 100%;
+    padding: 15px 20px;
+    margin: 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2.5%;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgb(233,233,233);
 }
 
 input[type="text"]:focus,
@@ -216,7 +395,7 @@ General button
 button{
   background : rgb(255, 255, 255);
   box-shadow: 0px 0px 5px rgb(255,255,255);
-  /*   height: 2.25em; */
+/*   height: 2.25em; */
   color: rgba(80,255,80,0.8);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -238,7 +417,7 @@ login button
   color : #ffffff;
   font-size : 1.15em;
   font-weight : bold;
-  width: 100%;
+  width: 100%;  
   transition: all ease 0.3s;
 }
 
@@ -247,29 +426,29 @@ login button
   position: relative;
   top: 3px;
   border: solid 3px rgb(255, 255, 255);
-
-
+  
+  
 }
 
 .btn-login:hover {
   cursor : pointer;
   background-color: rgb(0, 112, 255);
   border: solid 0.5px rgb(50, 152, 255);
-
+  
 }
 /****
-LINK's SIGN UP
+LINK's SIGN UP 
 ****/
 .note a {
-  color : rgb(0, 180, 200);
-  font-size : 1.5em;
+color : rgb(0, 180, 200);
+font-size : 1.5em;
 }
 .note a:hover {
-  color : rgb(15, 115, 199);
+color : rgb(15, 115, 199);
 }
 
 .note {
-  text-align : center;
+text-align : center;
 }
 
 
@@ -284,8 +463,8 @@ LINK's SIGN UP
 
 
 #footer div{
-
-
+  
+  
 }
 
 .wrap-footer div {
@@ -312,7 +491,7 @@ LINK's SIGN UP
 }
 
 #footer img:hover{
-
+  
 }
 
 #footer li {
@@ -322,7 +501,7 @@ LINK's SIGN UP
 .icon-footer img{
   margin: 5%;
   background-color: rgb(0,155,217);
-
+  
 }
 
 

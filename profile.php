@@ -118,7 +118,7 @@ wrap-nav
 <!--END NAV -->
 <!--BANNER -->
 <div id="banner">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lahti_harbour_panorama_2.jpg/1280px-Lahti_harbour_panorama_2.jpg">
+    <img src="https://s10.postimg.org/mi0h0mg55/Untitled-2.jpg">
 </div>
 <!--END BANNER-->
 

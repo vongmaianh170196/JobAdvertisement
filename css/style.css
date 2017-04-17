@@ -13,16 +13,16 @@
 }
 
 #banner{
-  width: 100%;
-  height: 200px;
-  margin: 25px 0 5px 0;
+height: 20%;
+  width: 80%;
+  margin: 0 auto;
   background-color: rgb(222,221,200);
 }
 
 
 
 #container{
-  height: 1800px;
+  
   width: 80%;
   margin: 0 auto;
 
@@ -47,7 +47,7 @@
   background-color: rgb(0,155,217);
 
 }
-
+-
 /*********
  Font
 *********/
@@ -86,7 +86,7 @@ h2{
 }
 
 .wrap-nav {
-  float: right;
+margin: 0 auto;
 
 }
 
@@ -136,25 +136,7 @@ div.login{
   background-color: rgb(0,177,237);
 }*/
 
-.linkbutton{
-  background-color: rgb(0,155,217);
-  outline: none;
-  cursor: pointer;
-  text-align: center;
-  padding: 8px 50px;
-  border-radius: 7px;
-  box-shadow: 0px 0px 2px rgb(0,155,217);
-  margin: 0 5px;
-}
-.linkbutton:hover{
-  background-color: rgb(0,177,237);
-  cursor: pointer;
-}
-.linkbutton:active {
-  position: relative;
-  top: 1px;
-}
-
+ 
 /*****
 nav2
 *****/
@@ -190,6 +172,58 @@ nav2
   font-size: 150%;
   color: rgb(230,230,230);
 }
+
+/****NAV2 WHEN HAVNG 2 BUTTONS****/
+.twobtn ul li{
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+
+.twobtn div{
+  float: left; 
+  margin: 10px 0;
+  paddling: auto;
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+  box-shadow: 0px 0px 0px rgb(0,0,0);
+  
+}
+
+.twobtn ul li{
+  display: inline-block;
+  margin: 0 8px;
+  background-color: transparent;
+  padding: 8px 50px;
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px rgb(0,0,0);
+font-size: 20px;  
+}
+.twobtn ul li:hover{
+  background-color: transparent;
+}
+ .twobtn a {
+  text-decoration: none;
+  font-size: 150%;
+  color: rgb(230,230,230);
+}  
+.twobtn button{
+  display: flex;
+  padding: 10px 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(0, 0, 128);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 9px 9px #999;
+}
+.twobtn div button:hover{
+  background-color:rgb(102, 0, 204);
+}
+/***END NAV2 2 BUTTONS***/
 
 /*********
 banner
@@ -238,7 +272,25 @@ banner
 .searchoption{
   padding: 0 0 10px 5px;
 }
-
+.linkbutton{
+  background-color: rgb(0,155,217);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px rgb(0,155,217);
+  margin: 0 5px;
+  color: white;
+}
+.linkbutton:hover{
+  background-color: rgb(0,177,237);
+  cursor: pointer;
+}
+.linkbutton:active {
+  position: relative;
+  top: 1px;
+}
 /*********
  CONTENT
 *********/
@@ -399,6 +451,66 @@ mini-footer
   width: 100%;
   color: white;
 }
+/******FORM****/
+   /****FORM
+****/
+.contentbox{
+	box-shadow: 0px 0px 5px rgb(111,111,111);
+  background-color: rgba(240, 240, 245, 0.2);
+	padding: 2%;
+margin:   auto;
+}
+.contentbox form{
+   margin: auto;
+}
+.contentbox h2{
+  color: rgb(0, 51, 102);
+}
+.contentbox input, textarea{
+width: 70%;
+	box-sizing: border-box;
+    border: 3px solid #ccc;
+}
+
+.contentbox form td {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+}
+
+.contentbox form td input{
+  width: 150%;
+  height: 100%;
+}
+.contentbox form td input[type=radio]{
+  width: 20px;
+}
+.contentbox form td input[type=checkbox]{
+  width: 20px;
+}
+/***BUTTON FORM***/
+.contentbox form button{
+  background: rgb(0, 179, 179);
+  border-radius: 5px;
+  border:0.5px;
+  padding: 2% 3%;
+  text-decoration: none;
+  color: rgb(0, 51, 51);
+  text-shadow: 2px 5px 5 rgb(0, 20, 26);
+  font-size: 18px;
+  margin: 5%;
+  cursor: pointer;
+}
+
+.contentbox form button:hover{
+  background: rgb(0, 230, 230);
+  color: rgb(230, 255, 255);
+  cursor: pointer;
+}
+/*****END BUTTON FORM***/
+
+
+/****END FORM****/
 @media screen and (max-width: 1280px) {
   /**
   nav2
