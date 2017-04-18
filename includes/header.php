@@ -6,7 +6,7 @@ wrap-nav
         <!--search-->
         <div class="search">
             <a class="linkbutton" href="index.php">Home page</a>
-            <form id="jobsearch">
+            <form id="jobsearch" method="post" action="search.php">
                 <input type="text" name="search" placeholder="Job...">
                 <input type="text" name="search" placeholder="Location...">
                 <input type="submit" value="Find" />

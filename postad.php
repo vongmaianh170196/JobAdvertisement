@@ -33,12 +33,9 @@ if (isset($_SESSION['employer']))
   NAVIGATION
   ---------->
 
-<<<<<<< HEAD
 <?php
 include_once ('includes/header.php');
 ?>
-
->>>>>>> e8bda1de7b1ae0460d2e0412fb3b9ecfebd9aab8
 <!----------
   CONTAINER
   ---------->
