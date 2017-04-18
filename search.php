@@ -4,11 +4,7 @@ session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-if(!isset($_GET['job']) && !isset($_GET['location']))
-{
-    header('Location: index.php');
-}
-if($_GET['job'] == "" && $_GET['location'] == "")
+if(!isset($_GET['job']) && !isset($_GET['location']) && !isset($_GET['job_type']))
 {
     header('Location: index.php');
 }
@@ -39,31 +35,41 @@ include_once ('includes/header.php');
 <div id="container">
     <div>
     <?php
-
-    $jobtext = $_GET['job'];
-    $joblocation = $_GET['location'];
-
-    if ($_GET['job'] != "" && $_GET['location'] == "") // Only job is set
+    if (isset($_GET['job']) && isset($_GET['location']))
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')";
+        $jobtext = $_GET['job'];
+        $joblocation = $_GET['location'];
+
+        if ($_GET['job'] != "" && $_GET['location'] == "") // Only job is set
+        {
+            $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')";
+            $result = mysqli_query($conn, $query);
+
+            include_once ('includes/adloop.php');
+        }
+        else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location is set
+        {
+            $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
+            $result = mysqli_query($conn, $query);
+
+            include_once ('includes/adloop.php');
+        }
+        else if ($_GET['job'] != "" && $_GET['location'] != "") // Both are set
+        {
+            $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')) AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
+            $result = mysqli_query($conn, $query);
+
+            include_once ('includes/adloop.php');
+        }
+    }
+    else if (isset($_GET['job_type']))
+    {
+        $query = "SELECT * FROM ADVERTISEMENT WHERE JOB_TYPE = '".$_GET['job_type']."'";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
     }
-    else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location is set
-    {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
-        $result = mysqli_query($conn, $query);
 
-        include_once ('includes/adloop.php');
-    }
-    else if ($_GET['job'] != "" && $_GET['location'] != "") // Both are set
-    {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')) AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
-        $result = mysqli_query($conn, $query);
-
-        include_once ('includes/adloop.php');
-    }
 
     ?>
     </div>

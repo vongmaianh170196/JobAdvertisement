@@ -53,23 +53,28 @@ include_once ('includes/header.php');
             <hr>
 
             <ul>
-                <li><a href="#">Front-end</a></li>
-                <li><a href="#">Back-end</a></li>
-                <li><a href="#">Web-design</a></li>
+                <?php
 
-                <span class="Job-Type-hide">
+                $query = "SELECT DISTINCT JOB_TYPE FROM ADVERTISEMENT";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<li><a href="search.php?job_type='.$row['JOB_TYPE'].'">'.$row['JOB_TYPE'].'</a></li>';
+                }
+
+                ?>
+
+                <!--<span class="Job-Type-hide">
            <span class="1">
               <li><a href="#">Javasript Fullstack</a></li>
               <li><a href="#">Data security</a></li>
               <li><a href="#">Network</a></li>            
             </span>
-          </span>
-
-
+          </span>-->
             </ul>
         </div>
 
-        <div class="SKILLS">
+        <!--<div class="SKILLS">
             <p>SKILLS</p>
             <hr>
 
@@ -86,9 +91,9 @@ include_once ('includes/header.php');
             </span>
           <span>
             </ul>
-        </div>
+        </div>-->
 
-        <div class="Job-Type">
+        <!--<div class="Job-Type">
             <p>LOCATION</p>
             <hr>
 
@@ -96,7 +101,6 @@ include_once ('includes/header.php');
                 <li><a href="#">Helsinki</a></li>
                 <li><a href="#">Tampere</a></li>
                 <li><a href="#">Lahti</a></li>
-
                 <span class="LOCATION-hide">
             <span class="3">
               <li><a href="#">Turku</a></li>
@@ -105,7 +109,7 @@ include_once ('includes/header.php');
             </span>
           <span>
             </ul>
-        </div>
+        </div>-->
 
         <div class="Job-Type">
             <p>LANGUAGES</p>
