@@ -10,7 +10,7 @@ include ('includes/config.php');
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-$query= "SELECT * FROM `ADVERTISEMENT` WHERE DEADLINE > NOW()";
+$query= "SELECT * FROM `ADVERTISEMENT` WHERE DEADLINE >= NOW()";
 
 $result = mysqli_query($conn,$query);
 
