@@ -40,12 +40,12 @@ include_once ('includes/header.php');
     <div>
     <?php
 
-    $jobtitle = $_GET['job'];
+    $jobtext = $_GET['job'];
     $joblocation = $_GET['location'];
 
     if ($_GET['job'] != "" && $_GET['location'] == "") // Only job is set
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE UPPER('%".$jobtitle."%')";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
@@ -59,7 +59,7 @@ include_once ('includes/header.php');
     }
     else if ($_GET['job'] != "" && $_GET['location'] != "") // Both are set
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE '%".$jobtitle."%' AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')) AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
