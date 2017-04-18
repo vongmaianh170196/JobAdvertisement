@@ -44,29 +44,25 @@ include_once ('includes/header.php');
         {
             $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')) AND DEADLINE >= NOW()";
             $result = mysqli_query($conn, $query);
-
             include_once ('includes/adloop.php');
         }
         else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location is set
         {
             $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')) AND DEADLINE >= NOW()";
             $result = mysqli_query($conn, $query);
-
             include_once ('includes/adloop.php');
         }
         else if ($_GET['job'] != "" && $_GET['location'] != "") // Both are set
         {
             $query = "SELECT * FROM ADVERTISEMENT WHERE ((UPPER(TITLE) LIKE UPPER('%".$jobtext."%') OR UPPER(REQUIREMENT) LIKE UPPER('%".$jobtext."%') OR UPPER(FURTHER_INFO) LIKE UPPER('%".$jobtext."%')) AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')) AND DEADLINE >= NOW()";
             $result = mysqli_query($conn, $query);
-
             include_once ('includes/adloop.php');
         }
     }
     else if (isset($_GET['job_type']))
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE JOB_TYPE = '".$_GET['job_type']."'";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE JOB_TYPE = '".$_GET['job_type']."' AND DEADLINE >= NOW()";
         $result = mysqli_query($conn, $query);
-
         include_once ('includes/adloop.php');
     }
 

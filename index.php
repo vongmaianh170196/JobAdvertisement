@@ -37,10 +37,16 @@ include_once ('includes/header.php');
     <div class="nav2">
         <div>
             <ul>
-                <li><a href="#">All</a></li>
-                <li><a href="#">Part-time Job</a></li>
-                <li><a href="#">Full-time Job</a></li>
-                <li><a href="#">Summer-time Job</a></li>
+                <?php
+
+                $query = "SELECT DISTINCT JOB_TYPE FROM ADVERTISEMENT";
+                $result = mysqli_query($conn, $query);
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<li><a class="linkbutton" href="search.php?job_type='.$row['JOB_TYPE'].'">'.$row['JOB_TYPE'].'</a></li>';
+                }
+
+                ?>
             </ul>
         </div>
     </div>
@@ -48,20 +54,20 @@ include_once ('includes/header.php');
       SIDE-NAV
   ---------->
     <div id="side-nav">
-        <div class="Job-Type">
+        <!--<div class="Job-Type">
             <p>JOB TYPE</p>
             <hr>
 
-            <ul>
+            <ul>-->
                 <?php
-
+/*
                 $query = "SELECT DISTINCT JOB_TYPE FROM ADVERTISEMENT";
                 $result = mysqli_query($conn, $query);
                 while($row = mysqli_fetch_array($result))
                 {
                     echo '<li><a href="search.php?job_type='.$row['JOB_TYPE'].'">'.$row['JOB_TYPE'].'</a></li>';
                 }
-
+*/
                 ?>
 
                 <!--<span class="Job-Type-hide">
@@ -70,9 +76,9 @@ include_once ('includes/header.php');
               <li><a href="#">Data security</a></li>
               <li><a href="#">Network</a></li>            
             </span>
-          </span>-->
+          </span>
             </ul>
-        </div>
+        </div>-->
 
         <!--<div class="SKILLS">
             <p>SKILLS</p>
