@@ -7,8 +7,8 @@ wrap-nav
         <div class="search">
             <a class="linkbutton" href="index.php">Home page</a>
             <form id="jobsearch" method="get" action="search.php">
-                <input type="text" name="job" placeholder="Job...">
-                <input type="text" name="location" placeholder="Location...">
+                <input type="text" name="job" placeholder="Job..." <?php if(isset($_GET['job'])){echo 'value="'.$_GET['job'].'"';} ?> >
+                <input type="text" name="location" placeholder="Location..." <?php if(isset($_GET['location'])){echo 'value="'.$_GET['location'].'"';} ?> >
                 <input type="submit" value="Find" />
             </form>
             <!--          Display username-->

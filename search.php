@@ -37,36 +37,36 @@ include_once ('includes/header.php');
     CONTAINER
     ---------->
 <div id="container">
-
+    <div>
     <?php
 
     $jobtitle = $_GET['job'];
     $joblocation = $_GET['location'];
 
-    if ($_GET['job'] != "" && $_GET['location'] == "") // Only job
+    if ($_GET['job'] != "" && $_GET['location'] == "") // Only job is set
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE TITLE = '".$jobtitle."'";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE UPPER('%".$jobtitle."%')";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
     }
-    else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location
+    else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location is set
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE LOCATION = '".$joblocation."'";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
     }
-    else if ($_GET['job'] != "" && $_GET['location'] != "") // Both
+    else if ($_GET['job'] != "" && $_GET['location'] != "") // Both are set
     {
-        $query = "SELECT * FROM ADVERTISEMENT WHERE TITLE = '".$jobtitle."' AND LOCATION = '".$joblocation."'";
+        $query = "SELECT * FROM ADVERTISEMENT WHERE UPPER(TITLE) LIKE '%".$jobtitle."%' AND UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')";
         $result = mysqli_query($conn, $query);
 
         include_once ('includes/adloop.php');
     }
 
     ?>
-
+    </div>
 </div> <!-- END CONTAINER -->
 
 <div id="footer">

@@ -91,7 +91,7 @@ if(isset($_GET['expand'])){
         echo '<div class=\"jobad\">';
 
         echo    '<h1>'.$value.'</h1>';
-        echo '<p>Location: Across all offices </p>';
+        echo '<p>Location: '.$row['LOCATION'].' </p>';
         echo   "<p>Application deadline: ". finnish_dateformat($row['DEADLINE'])."</p>
           <p>Requirement: ".$row['REQUIREMENT']."</p>
           <p>Futher Info : ".$row['FURTHER_INFO']."</p>
