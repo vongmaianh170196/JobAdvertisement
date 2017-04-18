@@ -3,6 +3,15 @@ include ('includes/config.php');
 session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+if(!isset($_GET['job']) && !isset($_GET['location']))
+{
+    header('Location: index.php');
+}
+if($_GET['job'] == "" && $_GET['location'] == "")
+{
+    header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html >
@@ -29,6 +38,34 @@ include_once ('includes/header.php');
     ---------->
 <div id="container">
 
+    <?php
+
+    $jobtitle = $_GET['job'];
+    $joblocation = $_GET['location'];
+
+    if ($_GET['job'] != "" && $_GET['location'] == "") // Only job
+    {
+        $query = "SELECT * FROM ADVERTISEMENT WHERE TITLE = '".$jobtitle."'";
+        $result = mysqli_query($conn, $query);
+
+        include_once ('includes/adloop.php');
+    }
+    else if ($_GET['job'] == "" && $_GET['location'] != "") // Only location
+    {
+        $query = "SELECT * FROM ADVERTISEMENT WHERE LOCATION = '".$joblocation."'";
+        $result = mysqli_query($conn, $query);
+
+        include_once ('includes/adloop.php');
+    }
+    else if ($_GET['job'] != "" && $_GET['location'] != "") // Both
+    {
+        $query = "SELECT * FROM ADVERTISEMENT WHERE TITLE = '".$jobtitle."' AND LOCATION = '".$joblocation."'";
+        $result = mysqli_query($conn, $query);
+
+        include_once ('includes/adloop.php');
+    }
+
+    ?>
 
 </div> <!-- END CONTAINER -->
 
