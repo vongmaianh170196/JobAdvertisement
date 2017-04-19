@@ -11,33 +11,10 @@
     NAVIGATION
     ---------->
 
-<div id="nav">
-
-    <!-----------
-    wrap-nav
-    ------------->
-    <div class="wrap-nav">
-        <!--search-->
-        <div class="search">
-            <a class="linkbutton" href="index.php">Home page</a>
-<br></br>
-                                    <!--          Display username-->
-            <span > <?php
-                if (!isset($_SESSION['username'])){
-                    echo 'Username will be displayed here after login';
-                }
-                else{
-                    echo $_SESSION['username'];
-                }
-                ?>
-          </span>
-            <!--          /Display username-->
-        </div>
-
 <?php
 include_once ('includes/header.php');
 ?>
-
+<br></br>
 <div class="container">
     <div class="student">
         <h1>Student </h1>
