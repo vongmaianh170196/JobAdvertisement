@@ -99,37 +99,52 @@ include_once ('includes/header.php');
             </ul>
         </div>-->
 
-        <!--<div class="Job-Type">
-            <p>LOCATION</p>
+        <div class="Job-Type">
+            <p>JOBS BY LOCATION</p>
             <hr>
-
             <ul>
-                <li><a href="#">Helsinki</a></li>
-                <li><a href="#">Tampere</a></li>
-                <li><a href="#">Lahti</a></li>
-                <span class="LOCATION-hide">
-            <span class="3">
-              <li><a href="#">Turku</a></li>
-              <li><a href="#">Oulu</a></li>
-              <li><a href="#">Porvoo</a></li>
+                <?php
+
+                $query = "SELECT DISTINCT LOCATION FROM ADVERTISEMENT";
+                $result = mysqli_query($conn, $query);
+                $loop1 = 0;
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<li><a href="search.php?location='.$row['LOCATION'].'">'.$row['LOCATION'].'</a></li>';
+                    $loop1++;
+                    if ($loop1 == 3)
+                    {
+                        echo '<span class="LOCATION-hide">
+            <span class="3">';
+                    }
+                }
+                ?>
             </span>
           <span>
             </ul>
-        </div>-->
+        </div>
 
         <div class="Job-Type">
-            <p>LANGUAGES</p>
+            <p>JOBS BY LANGUAGE</p>
             <hr>
 
             <ul>
-                <li><a href="#">English</a></li>
-                <li><a href="#">Finnish</a></li>
-                <li><a href="#">Danish</a></li>
-                <span class="LANGUAGES-hide">
-            <span class="4">
-              <li><a href="#">Germany</a></li>
-              <li><a href="#">Swedish</a></li>
-              <li><a href="#">Norweigian</a></li>
+                <?php
+
+                $query = "SELECT LANGUAGE FROM LANGUAGES";
+                $result = mysqli_query($conn, $query);
+                $loop2 = 0;
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '<li><a href="search.php?language='.$row['LANGUAGE'].'">'.$row['LANGUAGE'].'</a></li>';
+                    $loop2++;
+                    if ($loop2 == 3)
+                    {
+                        echo '<span class="LANGUAGES-hide">
+            <span class="4">';
+                    }
+                }
+                ?>
             </span>
           <span>
             </ul>

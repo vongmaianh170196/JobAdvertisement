@@ -108,9 +108,10 @@ include_once ('includes/header.php');
             if (isset($_POST['degreesearch']))
             {
                 $degree = $_POST['degreesearch'];
+                $degree = mysqli_real_escape_string($conn, $degree);
                 $query = "SELECT * FROM STUDENT_INFO WHERE DEGREE = '".$degree."' ORDER BY LASTNAME, FIRSTNAME";
                 $result = mysqli_query($conn,$query);
-                echo "<h2>Students with degree: '".$degree."'</h2>";
+                echo "<h2>Students with degree: '".$_POST['degreesearch']."'</h2>";
                 include_once ('includes/studentloop.php'); // The while loop of echoing
             }
             else if (isset($_POST['langsearch']))
@@ -124,7 +125,7 @@ include_once ('includes/header.php');
             else if (isset($_POST['skillsearch']))
             {
                 $skill = $_POST['skillsearch'];
-                $query = "SELECT * FROM STUDENT_INFO WHERE REF_STUDENT IN (SELECT REF_STU FROM STUDENT_SKILL WHERE SKILL = '".$skill."')";
+                $query = "SELECT * FROM STUDENT_INFO WHERE REF_STUDENT IN (SELECT REF_STU FROM STUDENT_SKILL WHERE SKILL LIKE '%".$skill."%')";
                 $result = mysqli_query($conn,$query);
                 echo "<h2>Students with skill: '".$skill."'</h2>";
                 include_once ('includes/studentloop.php');
