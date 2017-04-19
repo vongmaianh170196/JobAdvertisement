@@ -105,7 +105,7 @@ include_once ('includes/header.php');
             <ul>
                 <?php
 
-                $query = "SELECT DISTINCT LOCATION FROM ADVERTISEMENT";
+                $query = "SELECT DISTINCT LOCATION FROM ADVERTISEMENT ORDER BY LOCATION";
                 $result = mysqli_query($conn, $query);
                 $loop1 = 0;
                 while($row = mysqli_fetch_array($result))
