@@ -22,6 +22,17 @@ if(isset($_GET['expand'])){
         <link rel="shortcut icon" href="http://www.freeiconspng.com/uploads/snow-icon-5.png" type="image/x-icon" />
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
+		
+		
+		<script>
+		
+			function deleteAd() {
+				
+			window.location = "deleteAd.php?id=" + <?php echo $_GET['expand']; ?> 
+		};
+			
+		</script>
+		
 
     </head>
 <body onload=content_ajax() id="overlay" >
@@ -65,8 +76,7 @@ if(isset($_GET['expand'])){
                             <input type="hidden" id="ad_id" name="ad_id" value="<?php echo htmlspecialchars($ad_id); ?>">
                             <li><button type="submit" value="Submit">Edit</button></li>
                         </form>
-                        </form>
-                        <li><button onclick="deleteAd" class="delete" >Delete</button></li>
+                        <li><button onclick="deleteAd()" class="delete" >Delete</button></li>
                     </ul>
                 </div>
             <?php } ?>
