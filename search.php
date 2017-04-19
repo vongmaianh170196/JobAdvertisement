@@ -4,7 +4,7 @@ session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-if(!isset($_GET['job']) && !isset($_GET['location']) && !isset($_GET['job_type']))
+if(!isset($_GET['job']) && !isset($_GET['location']) && !isset($_GET['job_type']) && !isset($_GET['language']))
 {
     header('Location: index.php');
 }
@@ -59,9 +59,22 @@ include_once ('includes/header.php');
             include_once ('includes/adloop.php');
         }
     }
+    else if (!isset($_GET['job']) && isset($_GET['location']))
+    {
+        $joblocation = $_GET['location'];
+        $query = "SELECT * FROM ADVERTISEMENT WHERE (UPPER(LOCATION) LIKE UPPER('%".$joblocation."%')) AND DEADLINE >= NOW()";
+        $result = mysqli_query($conn, $query);
+        include_once ('includes/adloop.php');
+    }
     else if (isset($_GET['job_type']))
     {
         $query = "SELECT * FROM ADVERTISEMENT WHERE JOB_TYPE = '".$_GET['job_type']."' AND DEADLINE >= NOW()";
+        $result = mysqli_query($conn, $query);
+        include_once ('includes/adloop.php');
+    }
+    else if (isset($_GET['language']))
+    {
+        $query = "SELECT * FROM ADVERTISEMENT WHERE DEADLINE >= NOW() AND ID_ADV IN (SELECT REF_ADV FROM ADVERTISEMENT_LANGUAGE WHERE REF_LANG IN (SELECT LANG_ID FROM LANGUAGES WHERE LANGUAGE = '".$_GET['language']."'))";
         $result = mysqli_query($conn, $query);
         include_once ('includes/adloop.php');
     }
