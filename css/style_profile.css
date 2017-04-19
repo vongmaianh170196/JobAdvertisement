@@ -61,6 +61,11 @@ margin: auto;
   height: 30%;
   background-color: rgb(0,155,217);
 }
+.nameofuser{
+font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10%;
+}
 
 /*********
  Font
@@ -93,10 +98,6 @@ h1{
   color: rgb(230,230,230);
 }
 
-.wrap-nav {
-  float: right;
-  
-}
 
 .login{
   float: right;

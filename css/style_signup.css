@@ -6,11 +6,7 @@ body{
     background-color: rgb(233,233,233);
 }
 
-#nav{
-    width: 100%;
-    height: 50px;
-    margin: 0 0 5px 0;
-}
+
 
 #banner{
     width: 80%;
@@ -43,25 +39,11 @@ body{
 
 }
 /******HOMEPAGE BUTTON***/
-.linkbutton{
-  position: absolute;
-	background-color: rgb(0,155,217);
-	outline: none;
-	cursor: pointer;
-	text-align: center;
-	padding: 8px 50px;
-	border-radius: 7px;
-	box-shadow: 0px 0px 2px rgb(0,155,217);
-	top: 2%;
-  left: 1.5%;
-}
-.linkbutton:hover{
-  background-color: rgb(0,177,237);
-  cursor: pointer;
-}
-.linkbutton:active {
-	top: 1px;
-}
+
+
+
+
+
 /*********
  Font
 *********/
@@ -82,63 +64,8 @@ h1{
 
 
 
-#nav ul li:hover{
-    background-color: rgb(0,177,237);
-}
-
-#nav a {
-    text-decoration: none;
-    font-size: 150%;
-    color: rgb(230,230,230);
-}
-
-.wrap-nav {
-    float: right;
-
-}
-
-.login{
-    float: right;
-}
-
-.search {
-    float: left;
-}
-
-.search input{
-    /*   display: inline-block; */
-    padding: 11px 50px;
-    border-radius: 7px;
-    box-shadow: 0px 0px 3px rgb(99,99,99);
-    margin: 17px 5px;
-    border: 1px solid #e5e5e5;
-}
-
-.search input[type="submit"]{
-    border: 1px solid rgb(222,222,222);
-
-    box-shadow: 0 0 3px rgb(22,22,22);
-}
-
-div.login{
 
 
-}
-
-.login ul li{
-    display: inline-block;
-    background-color: rgb(0,155,217);
-    padding: 8px 50px;
-    border-radius: 7px;
-    box-shadow: 0px 0px 2px rgb(0,155,217);
-    margin: 0 5px;
-
-
-}
-
-.login ul li:hover{
-    background-color: rgb(0,177,237);
-}
 
 /*****
 nav2
@@ -432,8 +359,8 @@ span{
   color: rgba(255,20,20,0.9);
   font-size: 0.9em;
   font-weight: bold;
-  position: absolute;
-  top: 52px;
+  position: inherit;
+  
   display: block;
   
 }
@@ -495,6 +422,122 @@ font-size : 1.5em;
 color : rgb(15, 115, 199);
 }
 
+/********HEADER****
+******************/
+
+#nav{
+  width: 100%;
+  height: 50px;
+  margin: 0 0 5px 0;
+}
+
+#nav ul li:hover{
+  background-color: rgb(0,177,237);
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 150%;
+  color: rgb(230,230,230);
+}
+
+.wrap-nav {
+margin: 0 auto;
+
+}
+
+.search {
+  float: left;
+}
+
+#jobsearch input{
+  display: inline-block;
+  padding: 11px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 3px rgb(99,99,99);
+  margin: 17px 5px;
+  border: 1px solid #e5e5e5;
+
+width: 25%;
+}
+
+.search input[type="submit"]{
+  border: 1px solid rgb(222,222,222);
+
+  box-shadow: 0 0 3px rgb(22,22,22);
+}
+
+.linkbutton{
+  background-color: rgb(0,155,217);
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 50px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px rgb(0,155,217);
+  margin: 0 5px;
+  color: white;
+}
+.linkbutton:hover{
+  background-color: rgb(0,177,237);
+  cursor: pointer;
+}
+.linkbutton:active {
+  position: relative;
+  top: 1px;
+}
+
+.login{
+  float: right;
+}
+.login ul li{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+/*.login ul li:hover{
+  background-color: rgb(0,177,237);
+}*/
+.search input {
+    display: flex;
+    border-radius: 7px;
+   margin: 2%;
+}
+
+input {
+    line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+#jobsearch{
+display: flex;
+flex-direction: row;
+}
+#jobsearch input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;   
+    border: 1px solid #e5e5e5;
+   font-size:14px;
+     box-shadow: 0px 0px 3px rgb(99,99,99);
+}
+#jobsearch input:nth-of-type(3) {flex-grow: 0.5;}
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+.nameofuser{
+font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10%;
+}
+/*****END HEADER*****/
 
 /*********
 MEIDA QUERIES

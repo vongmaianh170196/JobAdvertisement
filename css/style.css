@@ -47,7 +47,11 @@ height: 20%;
   background-color: rgb(0,155,217);
 
 }
--
+.nameofuser{
+font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10%;
+}
 /*********
  Font
 *********/

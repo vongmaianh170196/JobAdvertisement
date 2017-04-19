@@ -12,7 +12,7 @@ wrap-nav
                 <input type="submit" value="Find" />
             </form>
             <!--          Display username-->
-            <span> <?php
+            <span class="nameofuser"> <?php
                 if (!isset($_SESSION['username'])){
                     echo 'Username will be displayed here after login';
                 }

@@ -62,7 +62,6 @@ include_once ('includes/header.php');
                 ?>
 
                 <form action="ad.php" method="post">
-                    <h1>POST A JOB</h1>
                     <br>
                     <br>
                     <br>
